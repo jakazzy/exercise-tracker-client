@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -24,3 +24,6 @@ function App() {
 }
 
 export default App;
+
+// referenece for linting
+// https://thomlom.dev/setup-eslint-prettier-react/
