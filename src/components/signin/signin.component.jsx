@@ -20,27 +20,30 @@ const Signin = () => {
         <Card.Title>Welcome back</Card.Title>
         <Form>
           <Form.Group as={Row} controlId="Email">
-            {/* <Form.Label column sm={3}>
-              Email
-            </Form.Label> */}
-            <Col>
-              <Form.Control
-                type="email"
-                placeholder="Enter email address"></Form.Control>
-            </Col>
+            <Form.Control
+              type="email"
+              placeholder="Enter email address"></Form.Control>
           </Form.Group>
 
           <Form.Group as={Row} controlId="password">
-            {/* <Form.Label column sm={3}>
-              Password
-            </Form.Label> */}
-            <Col>
-              <Form.Control
-                type="password"
-                placeholder="Enter password"></Form.Control>
-            </Col>
+            <Form.Control
+              type="password"
+              placeholder="Enter password"></Form.Control>
           </Form.Group>
+          <Form.Row>
+            <Col sm={6}>
+              <Form.Check type="switch" id="remember-me" label="Remember me" />
+            </Col>
+            <Col sm={6}>
+              {' '}
+              <Card.Link href="#">Forgot password</Card.Link>
+            </Col>
+          </Form.Row>
           <Button> Sign in</Button>
+          <div className="login-or">
+            <span className="span-or">OR</span>
+            <hr className="hr-or" />
+          </div>
         </Form>
       </Card.Body>
     </Card>
