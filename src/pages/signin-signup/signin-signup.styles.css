@@ -1,4 +1,4 @@
-/* .container-box {
+.container-box {
   position: relative;
   overflow: hidden;
   height: 61rem;
@@ -14,35 +14,3 @@
   border-radius: 94% 0px 0px 0%;
   background-color: #fff;
 }
-
-.social-icons {
-  width: 7.5rem;
-  margin: 1rem auto;
-  display: flex;
-  font-size: 2rem;
-  justify-content: space-between;
-}
-.fa-facebook-square {
-  color: #4267b2;
-}
-.fa-twitter-square {
-  color: #1da1f2;
-}
-.fa-google-plus-square {
-  color: #db4437;
-}
-.card-title {
-  margin-bottom: 1.75rem !important;
-}
-.form-control {
-  margin-bottom: 0.75rem;
-}
-.links-form {
-  margin-bottom: 1.5rem !important;
-}
-.btn-primary {
-  background-color: #ff365e !important;
-  border: #ff365e !important;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-} */
