@@ -31,3 +31,8 @@
 .fa-google-plus-square {
   color: #db4437;
 }
+
+$theme-colors: (
+  "primary": tomato,
+  "danger": teal
+);
