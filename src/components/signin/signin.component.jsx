@@ -35,7 +35,7 @@ const Signin = () => {
                   placeholder="Enter password"></Form.Control>
               </Col>
             </Form.Group>
-            <Form.Row>
+            <Form.Row className="links-form">
               <Col sm={6}>
                 <Form.Check
                   type="switch"
@@ -48,7 +48,7 @@ const Signin = () => {
                 <Card.Link href="#">Forgot password</Card.Link>
               </Col>
             </Form.Row>
-            <Button> Sign in</Button>
+            <Button block> Sign in</Button>
             <div className="login-or">
               <span className="span-or">OR</span>
               <hr className="hr-or" />

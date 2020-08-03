@@ -1,4 +1,4 @@
-.container-box {
+/* .container-box {
   position: relative;
   overflow: hidden;
   height: 61rem;
@@ -31,8 +31,18 @@
 .fa-google-plus-square {
   color: #db4437;
 }
-
-$theme-colors: (
-  "primary": tomato,
-  "danger": teal
-);
+.card-title {
+  margin-bottom: 1.75rem !important;
+}
+.form-control {
+  margin-bottom: 0.75rem;
+}
+.links-form {
+  margin-bottom: 1.5rem !important;
+}
+.btn-primary {
+  background-color: #ff365e !important;
+  border: #ff365e !important;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+} */
