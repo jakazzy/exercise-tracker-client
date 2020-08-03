@@ -1,12 +1,12 @@
 import React from 'react'
-import Signin from '../../components/signin/signin.component'
+import Signup from '../../components/signup/signup.component'
 import './signin-signup.styles.css'
 
 function SigninSignup() {
   return (
     <div className="container-box">
       <div className="divider"></div>
-      <Signin />
+      <Signup />
     </div>
   )
 }
