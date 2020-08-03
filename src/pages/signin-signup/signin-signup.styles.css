@@ -1,0 +1,16 @@
+.container-box {
+  position: relative;
+  overflow: hidden;
+  height: 61rem;
+  background-color: rgb(82, 185, 192);
+}
+
+.divider {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  width: 61%;
+  height: 61rem;
+  border-radius: 94% 0px 0px 0%;
+  background-color: #fff;
+}
