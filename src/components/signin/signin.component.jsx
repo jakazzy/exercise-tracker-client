@@ -44,6 +44,12 @@ const Signin = () => {
             <span className="span-or">OR</span>
             <hr className="hr-or" />
           </div>
+          <Form.Text className="text-muted">Login / Sign up with</Form.Text>
+          <div className="social-icons">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+            <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+          </div>
         </Form>
       </Card.Body>
     </Card>
