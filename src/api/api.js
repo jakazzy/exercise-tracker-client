@@ -5,7 +5,7 @@ export const createNewUser = async data => {
     const result = await axios({
       method: 'post',
       url: `${process.env.REACT_APP_BASE_URL}/signup`,
-      data: data
+      data
     })
     console.log(result)
   } catch (error) {
@@ -13,4 +13,15 @@ export const createNewUser = async data => {
   }
 }
 
-export const loginUser = () => {}
+export const loginUser = async data => {
+  try {
+    const result = await axios({
+      method: 'post',
+      url: `${process.env.REACT_APP_BASE_URL}/login`,
+      data
+    })
+    console.log(result)
+  } catch (error) {
+    console.log(error)
+  }
+}
