@@ -5,13 +5,16 @@ import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 
+import { loginUser } from '../../api/api'
+
 import './signin.styles.css'
 
 const Signin = () => {
   const { handleSubmit, register, errors } = useForm()
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
     console.log(data, 'this is login data')
+    await loginUser(data)
   }
 
   return (
