@@ -4,7 +4,7 @@ export const createNewUser = async data => {
   try {
     const result = await axios({
       method: 'post',
-      url: process.env.REACT_APP_BASE_URL,
+      url: `${process.env.REACT_APP_BASE_URL}/signup`,
       data: data
     })
     console.log(result)
