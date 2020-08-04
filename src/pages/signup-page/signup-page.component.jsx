@@ -1,8 +1,8 @@
 import React from 'react'
 import Signup from '../../components/signup/signup.component'
-import './signin-signup.styles.css'
+import './signup-page.styles.css'
 
-function SigninSignup() {
+function SignupPage() {
   return (
     <div className="container-box">
       <div className="divider"></div>
@@ -11,4 +11,4 @@ function SigninSignup() {
   )
 }
 
-export default SigninSignup
+export default SignupPage
