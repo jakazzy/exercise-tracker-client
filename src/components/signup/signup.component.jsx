@@ -5,13 +5,15 @@ import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 
+import { createNewUser } from '../../api/api'
 import './signup.styles.css'
 
 const Signup = () => {
   const { register, handleSubmit, errors } = useForm()
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
     console.log(data, 'input data')
+    await createNewUser(data)
   }
 
   return (
