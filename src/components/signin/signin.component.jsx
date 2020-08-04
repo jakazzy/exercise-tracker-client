@@ -3,10 +3,17 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
+import { useForm } from 'react-hook-form'
 
 import './signin.styles.css'
 
 const Signin = () => {
+  const { handleSubmit, register, errors } = useForm()
+
+  const onSubmit = data => {
+    console.log(data, 'this is login data')
+  }
+
   return (
     <Card
       style={{
@@ -19,12 +26,23 @@ const Signin = () => {
       <Card.Body>
         <Card.Title>Welcome back</Card.Title>
         <Container>
-          <Form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group as={Row} controlId="Email">
               <Col>
                 <Form.Control
                   type="email"
-                  placeholder="Enter email address"></Form.Control>
+                  placeholder="Enter email address"
+                  name="email"
+                  ref={register({
+                    required: 'Email is required',
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: 'invalid email address'
+                    }
+                  })}></Form.Control>
+                {errors.email && (
+                  <p className="error-message">{errors.email.message}</p>
+                )}
               </Col>
             </Form.Group>
 
@@ -32,7 +50,20 @@ const Signin = () => {
               <Col>
                 <Form.Control
                   type="password"
-                  placeholder="Enter password"></Form.Control>
+                  placeholder="Enter password"
+                  name="hashedpassword"
+                  ref={register({
+                    required: 'Password is required',
+                    minLength: {
+                      value: 8,
+                      message: 'password is too short'
+                    }
+                  })}></Form.Control>
+                {errors.hashedpassword && (
+                  <p className="error-message">
+                    {errors.hashedpassword.message}
+                  </p>
+                )}
               </Col>
             </Form.Group>
             <Form.Row className="links-form">
@@ -41,6 +72,8 @@ const Signin = () => {
                   type="switch"
                   id="remember-me"
                   label="Remember me"
+                  name="remember"
+                  ref={register}
                 />
               </Col>
               <Col sm={6}>

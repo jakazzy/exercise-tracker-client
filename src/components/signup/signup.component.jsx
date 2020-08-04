@@ -71,8 +71,8 @@ const Signup = () => {
                   ref={register({
                     required: 'password is required',
                     minLength: {
-                      value: 2,
-                      message: 'Name is too short'
+                      value: 8,
+                      message: 'Password is too short'
                     }
                   })}></Form.Control>
                 {errors.hashedpassword && (
