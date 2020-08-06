@@ -91,7 +91,17 @@ const Signin = () => {
             </div>
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
-              <i className="fa fa-facebook-square" aria-hidden="true"></i>
+              {/* <button
+                type="button"
+                onClick={() => {
+                  console.log("do you work");
+                  oauth("facebook");
+                }}
+              >
+              </button> */}
+              <a href="http://localhost:8080/api/v1/auth/facebook">
+                <i className="fa fa-facebook-square" aria-hidden="true"></i>
+              </a>
               <i className="fa fa-twitter-square" aria-hidden="true"></i>
               <i className="fa fa-google-plus-square" aria-hidden="true"></i>
             </div>
