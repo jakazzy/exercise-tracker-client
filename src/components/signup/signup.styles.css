@@ -25,14 +25,21 @@
 }
 
 .social-icons {
-  width: 7.5rem;
+  /* width: 7.5rem;
   margin: 1rem auto;
   display: flex;
   font-size: 2rem;
-  justify-content: space-between;
+  justify-content: space-between; */
+}
+.google-button {
+  padding-left: 5rem !important;
+  margin-top: 1rem;
+}
+.social-button {
+  width: 100%;
 }
 .fa-facebook-square {
-  color: #4267b2;
+  color: white;
 }
 .fa-twitter-square {
   color: #1da1f2;
@@ -49,9 +56,9 @@
 .links-form {
   margin-bottom: 1.5rem !important;
 }
-.btn-primary {
+.btn-bg-color {
   background-color: #ff365e !important;
   border: #ff365e !important;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
