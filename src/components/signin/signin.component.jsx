@@ -4,6 +4,9 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
+import FacebookLogin from 'react-facebook-login'
+import GoogleLogin from 'react-google-login'
+// import { FaFacebookSquare } from "react-icons/fa";
 
 import { loginUser } from '../../api/api'
 
@@ -15,6 +18,14 @@ const Signin = () => {
   const onSubmit = async data => {
     console.log(data, 'this is login data')
     await loginUser(data)
+  }
+
+  const responseFacebook = response => {
+    console.log(response)
+  }
+
+  const responseGoogle = response => {
+    console.log(response)
   }
 
   return (
@@ -84,27 +95,37 @@ const Signin = () => {
                 <Card.Link href="#">Forgot password</Card.Link>
               </Col>
             </Form.Row>
-            <Button block> Sign in</Button>
+            <Button className="btn-bg-color" block>
+              {' '}
+              Sign in
+            </Button>
             <div className="login-or">
               <span className="span-or">OR</span>
               <hr className="hr-or" />
             </div>
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
-              {/* <button
-                type="button"
-                onClick={() => {
-                  console.log("do you work");
-                  oauth("facebook");
-                }}
-              >
-              </button> */}
-              {/* <a href="http://localhost:8080/api/v1/auth/facebook"> */}
-              <a href="https://xercise-tracker-app.herokuapp.com/api/v1/auth/facebook">
-                <i className="fa fa-facebook-square" aria-hidden="true"></i>
-              </a>
+              <FacebookLogin
+                appId="1088597931155576"
+                fields="name,email,picture"
+                callback={responseFacebook}
+                cssClass="btn btn-primary social-button"
+                icon={
+                  <i className="fa fa-facebook-square" aria-hidden="true"></i>
+                }
+                textButton="&nbsp;&nbsp;Sign In with Facebook"
+              />
+              <GoogleLogin
+                clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                buttonText="&nbsp;&nbsp;Sign In with Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                className="social-button google-button btn btn-outline-danger"
+              />
+
+              {/* <i className="fa fa-facebook-square" aria-hidden="true"></i>
               <i className="fa fa-twitter-square" aria-hidden="true"></i>
-              <i className="fa fa-google-plus-square" aria-hidden="true"></i>
+              <i className="fa fa-google-plus-square" aria-hidden="true"></i> */}
             </div>
           </Form>
         </Container>
