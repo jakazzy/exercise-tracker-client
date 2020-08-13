@@ -99,7 +99,8 @@ const Signin = () => {
                 }}
               >
               </button> */}
-              <a href="http://localhost:8080/api/v1/auth/facebook">
+              {/* <a href="http://localhost:8080/api/v1/auth/facebook"> */}
+              <a href="https://xercise-tracker-app.herokuapp.com/api/v1/auth/facebook">
                 <i className="fa fa-facebook-square" aria-hidden="true"></i>
               </a>
               <i className="fa fa-twitter-square" aria-hidden="true"></i>
