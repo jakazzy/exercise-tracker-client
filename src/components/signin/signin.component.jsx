@@ -6,10 +6,8 @@ import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import FacebookLogin from 'react-facebook-login'
 import GoogleLogin from 'react-google-login'
-// import { FaFacebookSquare } from "react-icons/fa";
 
-import { loginUser } from '../../api/api'
-
+import { loginUser, oauth } from '../../api/api'
 import './signin.styles.css'
 
 const Signin = () => {
@@ -20,12 +18,14 @@ const Signin = () => {
     await loginUser(data)
   }
 
-  const responseFacebook = response => {
+  const responseFacebook = async response => {
     console.log(response)
+    await oauth('facebook', response.accessToken)
   }
 
-  const responseGoogle = response => {
+  const responseGoogle = async response => {
     console.log(response)
+    await oauth('google', response.accessToken)
   }
 
   return (

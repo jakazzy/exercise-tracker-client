@@ -26,11 +26,12 @@ export const loginUser = async data => {
   }
 }
 
-export const oauth = async media => {
+export const oauth = async (media, accessToken) => {
   try {
     const result = await axios({
-      method: 'get',
-      url: `${process.env.REACT_APP_BASE_URL}/auth/${media}`
+      method: 'post',
+      url: `${process.env.REACT_APP_BASE_URL}/auth/${media}`,
+      accessToken
     })
     console.log(result, 'i see you')
     return result
