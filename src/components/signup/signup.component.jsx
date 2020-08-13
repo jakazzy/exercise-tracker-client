@@ -134,9 +134,6 @@ const Signup = () => {
                 onFailure={responseGoogle}
                 className="social-button google-button btn btn-outline-danger"
               />
-              {/* <i className="fa fa-facebook-square" aria-hidden="true"></i>
-              <i className="fa fa-twitter-square" aria-hidden="true"></i>
-              <i className="fa fa-google-plus-square" aria-hidden="true"></i> */}
             </div>
           </Form>
         </Container>
