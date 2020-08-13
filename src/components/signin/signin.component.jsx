@@ -8,6 +8,8 @@ import FacebookLogin from 'react-facebook-login'
 import GoogleLogin from 'react-google-login'
 
 import { loginUser, oauth } from '../../api/api'
+import { FACEBOOK, GOOGLE } from '../../config/config'
+
 import './signin.styles.css'
 
 const Signin = () => {
@@ -95,7 +97,7 @@ const Signin = () => {
                 <Card.Link href="#">Forgot password</Card.Link>
               </Col>
             </Form.Row>
-            <Button className="btn-bg-color" block>
+            <Button className="btn-bg-color" type="submit" block>
               {' '}
               Sign in
             </Button>
@@ -106,7 +108,7 @@ const Signin = () => {
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
               <FacebookLogin
-                appId="1088597931155576"
+                appId={FACEBOOK.clientId}
                 fields="name,email,picture"
                 callback={responseFacebook}
                 cssClass="btn btn-primary social-button"
@@ -116,7 +118,7 @@ const Signin = () => {
                 textButton="&nbsp;&nbsp;Sign In with Facebook"
               />
               <GoogleLogin
-                clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                clientId={GOOGLE.clientId}
                 buttonText="&nbsp;&nbsp;Sign In with Google"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}

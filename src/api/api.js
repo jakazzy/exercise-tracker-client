@@ -5,11 +5,12 @@ export const createNewUser = async data => {
     const result = await axios({
       method: 'post',
       url: `${process.env.REACT_APP_BASE_URL}/signup`,
-      data
+      data: data
     })
-    console.log(result)
+    console.log(data, 'are you there')
+    return result
   } catch (error) {
-    console.log(error)
+    console.log(error, 'whats happeneing')
   }
 }
 
@@ -20,7 +21,8 @@ export const loginUser = async data => {
       url: `${process.env.REACT_APP_BASE_URL}/login`,
       data
     })
-    console.log(result)
+    console.log('result looks good')
+    return result
   } catch (error) {
     console.log(error)
   }
@@ -28,13 +30,14 @@ export const loginUser = async data => {
 
 export const oauth = async (media, accessToken) => {
   try {
-    const result = await axios({
-      method: 'post',
-      url: `${process.env.REACT_APP_BASE_URL}/auth/${media}`,
-      accessToken
-    })
-    console.log(result, 'i see you')
-    return result
+    console.log('i see upi')
+    // const result = await axios({
+    //   method: 'post',
+    //   url: `${process.env.REACT_APP_BASE_URL}/auth/${media}`,
+    //   "access_token": accessToken
+    // })
+    // console.log(result, 'i see you')
+    // return result
   } catch (error) {
     console.log(error)
   }
