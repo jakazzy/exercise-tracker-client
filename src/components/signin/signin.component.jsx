@@ -95,7 +95,7 @@ const Signin = () => {
                 <Card.Link href="#">Forgot password</Card.Link>
               </Col>
             </Form.Row>
-            <Button className="btn-bg-color" block>
+            <Button className="btn-bg-color" type="submit" block>
               {' '}
               Sign in
             </Button>
