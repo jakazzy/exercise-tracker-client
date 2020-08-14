@@ -22,7 +22,9 @@ const ResendToken = () => {
         }}>
         <Card.Body>
           <Container>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>
+              Kindly provide your email so we can resend activation email
+            </Card.Title>
             <Form onSubmit={handleSubmit(onSubmit)}>
               <Form.Group as={Row} controlId="Email">
                 <Col>
@@ -44,7 +46,7 @@ const ResendToken = () => {
               </Form.Group>
               <Button className="btn-bg-color" type block>
                 {' '}
-                Resend instruction
+                Resend Email
               </Button>
             </Form>
             <Card.Link href="#">Card Link</Card.Link>

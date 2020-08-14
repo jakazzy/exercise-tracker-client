@@ -22,7 +22,9 @@ const ResetPassword = () => {
         }}>
         <Card.Body>
           <Container>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>
+              Kindly provide your email so we can reset password
+            </Card.Title>
             <Form onSubmit={handleSubmit(onSubmit)}>
               <Form.Group as={Row} controlId="Email">
                 <Col>
