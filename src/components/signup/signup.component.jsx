@@ -104,7 +104,7 @@ const Signup = () => {
               </Col>
               <Col sm={6}>
                 {' '}
-                <Card.Link href="#">Forgot password</Card.Link>
+                {/* <Card.Link href="#">Forgot password</Card.Link> */}
               </Col>
             </Form.Row>
             <Button className="btn-bg-color" type="submit" block>
