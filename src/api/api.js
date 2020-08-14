@@ -39,3 +39,16 @@ export const oauth = async (media, accessToken) => {
     console.log(error)
   }
 }
+
+export const confirmation = async token => {
+  try {
+    const result = await axios({
+      method: 'post',
+      url: `${process.env.REACT_APP_BASE_URL}/confirmation`,
+      token
+    })
+    return result
+  } catch (error) {
+    console.log(error)
+  }
+}
