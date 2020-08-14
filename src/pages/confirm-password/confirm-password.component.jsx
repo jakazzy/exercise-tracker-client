@@ -22,31 +22,49 @@ const ConfirmPassword = () => {
         }}>
         <Card.Body>
           <Container>
-            <Card.Title>
-              Kindly provide your email so we can resend activation email
-            </Card.Title>
+            <Card.Title>Kindly reset password</Card.Title>
             <Form onSubmit={handleSubmit(onSubmit)}>
-              <Form.Group as={Row} controlId="Email">
+              <Form.Group as={Row} controlId="password">
                 <Col>
                   <Form.Control
-                    type="email"
-                    placeholder="Enter email address"
-                    name="email"
+                    type="password"
+                    placeholder="Enter password "
+                    name="password"
                     ref={register({
-                      required: 'Email is required',
+                      required: 'password is required',
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: 'invalid email address'
+                        message: 'invalid password '
                       }
                     })}></Form.Control>
-                  {errors.email && (
-                    <p className="error-message">{errors.email.message}</p>
+                  {errors.password && (
+                    <p className="error-message">{errors.password.message}</p>
+                  )}
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="password">
+                <Col>
+                  <Form.Control
+                    type="password"
+                    placeholder="Confirm password"
+                    name="confirmPassword"
+                    ref={register({
+                      required: 'password is required',
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: 'invalid password address'
+                      }
+                    })}></Form.Control>
+                  {errors.confirmPassword && (
+                    <p className="error-message">
+                      {errors.confirmPassword.message}
+                    </p>
                   )}
                 </Col>
               </Form.Group>
               <Button className="btn-bg-color" type block>
                 {' '}
-                Resend Email
+                Reset Password
               </Button>
             </Form>
             <Card.Link href="#">Card Link</Card.Link>

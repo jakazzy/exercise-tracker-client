@@ -6,6 +6,7 @@ import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import FacebookLogin from 'react-facebook-login'
 import GoogleLogin from 'react-google-login'
+import { FACEBOOK, GOOGLE } from '../../config/config'
 
 import { createNewUser, oauth } from '../../api/api'
 import './signup.styles.css'
@@ -118,7 +119,7 @@ const Signup = () => {
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
               <FacebookLogin
-                appId="1088597931155576"
+                appId={FACEBOOK.clientId}
                 fields="name,email,picture"
                 callback={responseFacebook}
                 cssClass="btn btn-primary social-button"
@@ -128,7 +129,7 @@ const Signup = () => {
                 textButton="&nbsp;&nbsp;Sign In with Facebook"
               />
               <GoogleLogin
-                clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                clientId={GOOGLE.clientId}
                 buttonText="&nbsp;&nbsp;Sign In with Google"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
