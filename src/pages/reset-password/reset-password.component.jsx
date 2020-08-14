@@ -46,7 +46,7 @@ const ResetPassword = () => {
               </Form.Group>
               <Button className="btn-bg-color" type block>
                 {' '}
-                Resend instruction
+                Reset Password
               </Button>
             </Form>
             <Card.Link href="#">Card Link</Card.Link>
