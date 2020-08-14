@@ -7,9 +7,9 @@ export const createNewUser = async data => {
       url: `${process.env.REACT_APP_BASE_URL}/signup`,
       data
     })
-    console.log(result)
+    return result
   } catch (error) {
-    console.log(error)
+    console.log(error.message)
   }
 }
 
@@ -20,7 +20,7 @@ export const loginUser = async data => {
       url: `${process.env.REACT_APP_BASE_URL}/login`,
       data
     })
-    console.log(result)
+    return result
   } catch (error) {
     console.log(error)
   }
