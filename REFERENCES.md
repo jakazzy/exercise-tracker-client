@@ -10,3 +10,5 @@ colors: https://dribbble.com/shots/13182767-Arena-dashboard-summary-screen
 
 Other resources to improve ui/ux:
 https://fireart.studio/blog/user-interface-design-for-a-fitness-app/
+
+https://www.myfitnesspal.com/

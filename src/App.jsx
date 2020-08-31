@@ -8,6 +8,7 @@ import Dashboard from './pages/dashboard/dashboard.component'
 import ResendToken from './pages/resend-token/resend-token.component'
 import ResetPassword from './pages/reset-password/reset-password.component'
 import ConfirmPassword from './pages/confirm-password/confirm-password.component'
+import LandingPage from './pages/landing-page/LandingPage.component'
 
 import './App.css'
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/confirmation" component={Confirmation} />
         <Route exact path="/reset-password" component={ResetPassword} />
         <Route exact path="/confirm-password" component={ConfirmPassword} />
+        <Route exact path="/landingpage" component={LandingPage} />
       </Switch>
     </div>
   )

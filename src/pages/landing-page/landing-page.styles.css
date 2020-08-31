@@ -1,0 +1,71 @@
+.rounded-divider {
+  /* background: rgb(121,88,9); */
+  /* background: linear-gradient(190deg, rgba(121,88,9,1) 35%, rgba(82, 185, 192,1) 100%); */
+  background: rgb(82, 185, 192);
+  background: linear-gradient(
+    0deg,
+    rgba(82, 185, 192, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  width: 30rem;
+  height: 30rem;
+  /* border: 1px solid black; */
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  position: relative;
+  right: -20rem;
+  left: 91rem;
+}
+
+.stability {
+  width: 24rem;
+  height: 20rem;
+  display: inline-block;
+  position: absolute;
+  top: 18rem;
+  right: 32rem;
+}
+
+.work-out {
+  width: 28rem;
+  height: 25rem;
+  position: absolute;
+  top: 31rem;
+  left: 24rem;
+  top: 38rem;
+  left: 13rem;
+}
+
+.landing-page-container {
+  width: 67rem;
+}
+.CTA-message {
+  width: 30rem;
+  height: 11rem;
+  position: absolute;
+  line-height: 1.8rem;
+  top: 17rem;
+  left: 20rem;
+  /* text-align: center; */
+}
+.btn-bg-color-cta {
+  background-color: #ff365e !important;
+  border: #ff365e !important;
+  margin: 1.5rem auto;
+  width: 21rem !important;
+}
+
+.success-stories {
+  width: 40rem;
+  height: 25rem;
+  margin: 0 auto;
+}
+
+.welcome-message {
+  height: 62rem;
+}
+
+.carousel.slide {
+  height: 21rem;
+  width: 35rem;
+  background-color: #dad5d5;
+}
