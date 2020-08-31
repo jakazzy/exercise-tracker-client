@@ -25,6 +25,8 @@ const LandingPage = () => {
           <img src={WorkOut} alt="workout" className="work-out" />
         </div>
       </div>
+
+      <div className="success-stories"></div>
     </div>
   )
 }
