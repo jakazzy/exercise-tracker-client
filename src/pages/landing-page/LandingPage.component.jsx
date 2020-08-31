@@ -8,7 +8,7 @@ const LandingPage = () => {
   return (
     <div>
       <HomeNavbar />
-      <div className="landing-page-container">
+      <div className="landing-page-container" style={{ overflowX: 'hidden' }}>
         <div className="rounded-divider"></div>
         <div className="landing-page-images">
           <img src={Stability} alt="stability" className="stability" />
