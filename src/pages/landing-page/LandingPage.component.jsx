@@ -6,9 +6,9 @@ import WorkOut from '../../images/working_out.svg'
 
 const LandingPage = () => {
   return (
-    <div>
+    <div style={{ overflowX: 'hidden' }}>
       <HomeNavbar />
-      <div className="landing-page-container" style={{ overflowX: 'hidden' }}>
+      <div className="landing-page-container">
         <div className="rounded-divider"></div>
         <div className="landing-page-images">
           <img src={Stability} alt="stability" className="stability" />
