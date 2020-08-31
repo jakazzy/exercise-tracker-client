@@ -31,6 +31,8 @@
   position: absolute;
   top: 31rem;
   left: 24rem;
+  top: 38rem;
+  left: 13rem;
 }
 
 .landing-page-container {
@@ -55,4 +57,15 @@
 .success-stories {
   width: 40rem;
   height: 25rem;
+  margin: 0 auto;
+}
+
+.welcome-message {
+  height: 60rem;
+}
+
+.carousel.slide {
+  height: 21rem;
+  width: 35rem;
+  background-color: #dad5d5;
 }

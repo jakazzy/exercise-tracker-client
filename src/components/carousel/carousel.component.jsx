@@ -1,5 +1,12 @@
 import React, { useState } from 'react'
 import { Carousel } from 'react-bootstrap'
+// import People from '../../images/people.svg'
+// import Happy from '../../images/happy.png'
+// import Train from '../../images/train.svg'
+import ProfilePic from '../../images/profile_pic.svg'
+import Male from '../../images/male.svg'
+import Female from '../../images/female.svg'
+import './carousel.styles.css'
 
 const ControlledCarousel = () => {
   const [index, setIndex] = useState(0)
@@ -9,12 +16,13 @@ const ControlledCarousel = () => {
   }
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel activeIndex={index} onSelect={handleSelect} className="shadow">
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          src={ProfilePic}
           alt="First slide"
+          style={{ width: '10rem', height: '10rem' }}
         />
         <Carousel.Caption>
           <h3>First slide label</h3>
@@ -24,8 +32,9 @@ const ControlledCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          src={Male}
           alt="Second slide"
+          style={{ width: '10rem', height: '10rem' }}
         />
 
         <Carousel.Caption>
@@ -36,8 +45,9 @@ const ControlledCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          src={Female}
           alt="Third slide"
+          style={{ width: '10rem', height: '10rem' }}
         />
 
         <Carousel.Caption>
