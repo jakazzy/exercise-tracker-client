@@ -1,0 +1,38 @@
+.rounded-divider {
+  /* background: rgb(121,88,9); */
+  /* background: linear-gradient(190deg, rgba(121,88,9,1) 35%, rgba(82, 185, 192,1) 100%); */
+  background: rgb(82, 185, 192);
+  background: linear-gradient(
+    0deg,
+    rgba(82, 185, 192, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  width: 30rem;
+  height: 30rem;
+  /* border: 1px solid black; */
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  position: relative;
+  right: -20rem;
+  left: 91rem;
+}
+
+.stability {
+  width: 24rem;
+  height: 20rem;
+  display: inline-block;
+  position: absolute;
+  top: 14rem;
+  right: 20rem;
+}
+
+.work-out {
+  width: 28rem;
+  height: 25rem;
+  position: absolute;
+  top: 31rem;
+  left: 24rem;
+}
+
+.landing-page-container {
+  width: 67rem;
+}

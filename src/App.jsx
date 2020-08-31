@@ -8,7 +8,7 @@ import Dashboard from './pages/dashboard/dashboard.component'
 import ResendToken from './pages/resend-token/resend-token.component'
 import ResetPassword from './pages/reset-password/reset-password.component'
 import ConfirmPassword from './pages/confirm-password/confirm-password.component'
-import LandingPage from './pages/landing-page/LandingPage'
+import LandingPage from './pages/landing-page/LandingPage.component'
 
 import './App.css'
 
