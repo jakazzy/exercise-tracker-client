@@ -69,3 +69,9 @@
   width: 35rem;
   background-color: #dad5d5;
 }
+section.info {
+  display: inline-flex;
+  width: 59rem;
+  margin: 6rem auto;
+  justify-content: space-between;
+}
