@@ -7,6 +7,7 @@ import WorkOut from '../../images/working_out.svg'
 import ControlledCarousel from '../../components/carousel/carousel.component'
 import { cardData } from '../../data/data'
 import CardItem from '../../components/card/card.component'
+import Footer from '../../components/footer/footer'
 
 const LandingPage = () => {
   return (
@@ -39,6 +40,7 @@ const LandingPage = () => {
           <CardItem width={width} img={image} key={id} info={info} />
         ))}
       </section>
+      <Footer />
     </div>
   )
 }
