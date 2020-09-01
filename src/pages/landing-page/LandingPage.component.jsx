@@ -32,7 +32,7 @@ const LandingPage = () => {
         </div>
       </section>
       <div className="success-stories">
-        <h2>SUCCESS STORIES</h2>
+        <h3>SUCCESS STORIES</h3>
         <ControlledCarousel />
       </div>
       <section className="info">
