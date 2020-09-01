@@ -5,6 +5,9 @@ import './landing-page.styles.css'
 import Stability from '../../images/stability_ball.svg'
 import WorkOut from '../../images/working_out.svg'
 import ControlledCarousel from '../../components/carousel/carousel.component'
+import { cardData } from '../../data/data'
+import CardItem from '../../components/card/card.component'
+import Footer from '../../components/footer/footer'
 
 const LandingPage = () => {
   return (
@@ -29,9 +32,15 @@ const LandingPage = () => {
         </div>
       </section>
       <div className="success-stories">
-        <h2>SUCCESS STORIES</h2>
+        <h3>SUCCESS STORIES</h3>
         <ControlledCarousel />
       </div>
+      <section className="info">
+        {cardData.map(({ width, image, id, info }) => (
+          <CardItem width={width} img={image} key={id} info={info} />
+        ))}
+      </section>
+      <Footer />
     </div>
   )
 }

@@ -21,8 +21,8 @@
   height: 20rem;
   display: inline-block;
   position: absolute;
-  top: 18rem;
-  right: 32rem;
+  top: 25rem;
+  right: 38rem;
 }
 
 .work-out {
@@ -43,8 +43,8 @@
   height: 11rem;
   position: absolute;
   line-height: 1.8rem;
-  top: 17rem;
-  left: 20rem;
+  top: 18rem;
+  left: 28rem;
   /* text-align: center; */
 }
 .btn-bg-color-cta {
@@ -68,4 +68,10 @@
   height: 21rem;
   width: 35rem;
   background-color: #dad5d5;
+}
+section.info {
+  display: inline-flex;
+  width: 59rem;
+  margin: 6rem auto;
+  justify-content: space-between;
 }
