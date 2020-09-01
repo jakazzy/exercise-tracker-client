@@ -10,8 +10,8 @@ const HomeNavbar = () => {
         <Container>
           <Navbar.Brand href="#home">GOALTRACKER</Navbar.Brand>
           <Nav classname="kjh">
-            <Nav.Link href="signin"> Sign in</Nav.Link>
-            <Nav.Link href="signup"> Sign up</Nav.Link>
+            <Nav.Link href="/login"> Log in</Nav.Link>
+            <Nav.Link href="/signup"> Sign up</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
