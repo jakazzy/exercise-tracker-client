@@ -1,3 +1,10 @@
+.dashboard-brand {
+  margin: 5rem 0;
+}
+
+.sidebar {
+  overflow: hidden;
+}
 .list-group {
   padding: 30px 0 30px 30px !important;
   background-color: red;
@@ -6,6 +13,7 @@
   background-color: red !important;
   color: black !important;
   border: none !important;
+  text-align: left !important;
 }
 
 .list-group-item.active {
@@ -59,4 +67,8 @@ a.list-group-item:active {
   color: white !important;
   /* margin: 20px; */
   outline: none;
+}
+
+svg {
+  margin-right: 0.4rem;
 }

@@ -15,7 +15,7 @@ import './dashboard.styles.css'
 
 const Sidebar = () => {
   return (
-    <div>
+    <div className="sidebar">
       <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
         <Row>
           <Col sm={2}>
@@ -23,6 +23,7 @@ const Sidebar = () => {
               style={{
                 height: '100vh'
               }}>
+              <h4 className="dashboard-brand">GOAL TRACKER</h4>
               <ListGroup.Item action href="#link1">
                 <RiDashboardLine />
                 Dashboard
