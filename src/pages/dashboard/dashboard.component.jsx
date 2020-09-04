@@ -16,51 +16,12 @@ import './dashboard.styles.css'
 const Sidebar = () => {
   return (
     <div>
-      {/* <Navbar>
-        <Navbar.Brand href="#home">Goal Tracker</Navbar.Brand>
-        <Nav>
-          <Nav.Link href="">Dashboard</Nav.Link>
-          <Nav.Link href="">Schedule and Goals</Nav.Link>
-          <Nav.Link href="">Profile</Nav.Link>
-          <Nav.Link href="">Invite friends</Nav.Link>
-        </Nav>
-      </Navbar> */}
-
-      {/* <ListGroup>
-        <ListGroup.Item action href="#home">
-          {' '}
-          Dashboard
-        </ListGroup.Item>
-        <ListGroup.Item action href="#home">
-          {' '}
-          Schedule and Goal
-        </ListGroup.Item>
-        <ListGroup.Item action href="#home">
-          {' '}
-          Profile
-        </ListGroup.Item>
-        <ListGroup.Item action href="#home">
-          {' '}
-          Invite Friends
-        </ListGroup.Item>
-      </ListGroup> */}
-
       <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
         <Row>
-          <Col
-            sm={2}
-            style={
-              {
-                //   height: '100vh',
-                //   border: '1px solid #ccced0',
-                //   backgroundColor: 'green',
-                //   borderRadius: '20px'
-              }
-            }>
+          <Col sm={2}>
             <ListGroup
               style={{
                 height: '100vh'
-                // backgroundColor: 'rgb(82, 185, 192)'
               }}>
               <ListGroup.Item action href="#link1">
                 <RiDashboardLine />
