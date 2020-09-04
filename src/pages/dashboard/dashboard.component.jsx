@@ -6,6 +6,7 @@ import Profile from './profile.component'
 import Schedule from './schedule.component'
 import Main from './main.component'
 
+import './dashboard.styles.css'
 const Sidebar = () => {
   return (
     <div>
@@ -50,7 +51,11 @@ const Sidebar = () => {
                 //   borderRadius: '20px'
               }
             }>
-            <ListGroup>
+            <ListGroup
+              style={{
+                height: '100vh'
+                // backgroundColor: 'rgb(82, 185, 192)'
+              }}>
               <ListGroup.Item action href="#link1">
                 Dashboard
               </ListGroup.Item>
