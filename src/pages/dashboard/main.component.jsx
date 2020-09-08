@@ -1,14 +1,30 @@
 import React from 'react'
+import { Card, Row, Col } from 'react-bootstrap'
+import Exercise from '../../images/exercise.svg'
+import Search from '../../components/search_input/search.components'
 
 const Main = () => {
   return (
     <div>
-      Is it thy will, thy image should keep open My heavy eyelids to the weary
-      night? Dost thou desire my slumbers should be broken, While shadows like
-      to thee do mock my sight? Is it thy spirit that thou send'st from thee So
-      far from home into my deeds to pry, To find out shames and idle hours in
-      me, The scope and tenure of thy jealousy? O, no! thy love, though much, is
-      not so great: It is my love that keeps mine eye awake:
+      <div className="dashboard-header">
+        <Row>
+          <Col xs={6}>
+            <h2>Dashboard</h2>
+          </Col>
+          <Col xs={3}>
+            <p>Date of the day</p>
+          </Col>
+          <Col xs={3}>
+            <Search />
+          </Col>
+        </Row>
+      </div>
+      <Card style={{ width: '60rem', margin: '2rem auto' }}>
+        <Card.Body>
+          <img src={Exercise} alt="Exercise" width="300" height="300" />
+        </Card.Body>
+      </Card>
+      {/* </Container> */}
     </div>
   )
 }

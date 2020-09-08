@@ -18,7 +18,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
         <Row>
-          <Col sm={2}>
+          <Col sm={3} lg={2}>
             <ListGroup
               style={{
                 height: '100vh'
@@ -46,7 +46,7 @@ const Sidebar = () => {
               </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col sm={8}>
+          <Col sm={8} lg={7}>
             <Tab.Content>
               <Tab.Pane eventKey="#link1">
                 <Main />
@@ -64,6 +64,9 @@ const Sidebar = () => {
                 <InviteFriend />
               </Tab.Pane>
             </Tab.Content>
+          </Col>
+          <Col className="person-detail" lg={3}>
+            <div>hello</div>
           </Col>
         </Row>
       </Tab.Container>

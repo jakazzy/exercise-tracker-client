@@ -12,3 +12,6 @@ Other resources to improve ui/ux:
 https://fireart.studio/blog/user-interface-design-for-a-fitness-app/
 
 https://www.myfitnesspal.com/
+
+References for Search Bar
+https://codepen.io/CBeghin/pen/HeuiF
