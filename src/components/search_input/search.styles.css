@@ -9,23 +9,22 @@ body {
   margin: 50px 100px;
   display: inline-block;
   position: relative;
-  height: 60px;
-  float: right;
+  /* height: 60px;
+  float: right; */
   padding: 0;
-  position: relative;
 }
 
 input[type='text'] {
-  height: 60px;
+  /* height: 60px;
   font-size: 55px;
-  display: inline-block;
+  display: inline-block; */
   font-family: 'Lato';
   font-weight: 100;
   border: none;
   outline: none;
   color: #555;
   padding: 3px;
-  padding-right: 60px;
+  /* padding-right: 60px; */
   width: 0px;
   position: absolute;
   top: 0;
@@ -41,14 +40,17 @@ input[type='text']:focus:hover {
 }
 
 input[type='text']:focus {
-  width: 700px;
+  /* width: 700px; */
+  width: 400px;
   z-index: 1;
   border-bottom: 1px solid #bbb;
   cursor: text;
 }
 input[type='submit'] {
-  height: 67px;
-  width: 63px;
+  /* height: 67px;
+  width: 63px; */
+  height: 37px;
+  width: 33px;
   display: inline-block;
   color: red;
   float: right;
