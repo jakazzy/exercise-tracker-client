@@ -33,15 +33,16 @@ const Main = () => {
         className="shadow border-0"
         style={{
           position: 'relative',
-          height: '11rem'
+          height: '8rem',
+          backgroundColor: '#b2d9dc'
         }}>
         <Card.Body>
           <div
             style={{
               textAlign: 'left',
-              margin: '1rem 2rem 0rem 3rem',
-              padding: '1rem',
-              fontSize: '1.2rem'
+              margin: '1rem 1rem 0rem 1rem'
+              // padding: '1rem',
+              // fontSize: '1.2rem'
             }}>
             {' '}
             <p>
@@ -52,8 +53,8 @@ const Main = () => {
           <img
             src={Training}
             alt="Exercise"
-            width="300"
-            height="300"
+            width="250"
+            height="250"
             style={{ position: 'absolute', top: '-6rem' }}
           />
         </Card.Body>

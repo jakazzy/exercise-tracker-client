@@ -10,10 +10,10 @@
   display: flex;
 }
 .card-section {
-  height: 13rem;
+  height: 15rem;
   width: 100%;
   background-color: blue;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 .first-graph {
   width: 60%;

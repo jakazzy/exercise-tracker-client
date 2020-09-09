@@ -34,11 +34,11 @@ const Sidebar = () => {
               </ListGroup.Item>
               <ListGroup.Item action href="#link3">
                 <CgProfile />
-                Profile
+                User Profile
               </ListGroup.Item>
               <ListGroup.Item action href="#link4">
                 <AiFillWechat />
-                Chat
+                Settings
               </ListGroup.Item>
               <ListGroup.Item action href="#link5">
                 <FaUserFriends />
