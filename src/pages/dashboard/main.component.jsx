@@ -29,12 +29,17 @@ const Main = () => {
           </Col>
         </Row>
       </div>
-      <Card>
-        <Card.Body style={{ position: 'relative', height: '12rem' }}>
+      <Card
+        className="shadow border-0"
+        style={{
+          position: 'relative',
+          height: '11rem'
+        }}>
+        <Card.Body>
           <div
             style={{
               textAlign: 'left',
-              margin: '2rem 2rem 2rem 3rem',
+              margin: '1rem 2rem 0rem 3rem',
               padding: '1rem',
               fontSize: '1.2rem'
             }}>
@@ -55,15 +60,19 @@ const Main = () => {
       </Card>
       {/* </Container> */}
       {/* graph */}
-      <div className="graphs">
-        <div className="first-graph">hi</div>
-        <div className="second-graph">hello</div>
-      </div>
-      <div className="metrics">
-        <div className="first-metric">hi</div>
-        <div className="second-metric">hello</div>
-        <div className="third-metric">you</div>
-      </div>
+      <Card className="shadow border-0 card-section">
+        <Card.Body className="graphs">
+          <div className="first-graph">hi</div>
+          <div className="second-graph">hello</div>
+        </Card.Body>
+      </Card>
+      <Card className="shadow border-0 card-section">
+        <Card.Body className="metrics">
+          <div className="first-metric">hi</div>
+          <div className="second-metric">hello</div>
+          <div className="third-metric">you</div>
+        </Card.Body>
+      </Card>
     </div>
   )
 }

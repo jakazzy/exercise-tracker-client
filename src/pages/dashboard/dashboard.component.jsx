@@ -46,7 +46,7 @@ const Sidebar = () => {
               </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col sm={8} lg={7}>
+          <Col sm={8} lg={9}>
             <Tab.Content>
               <Tab.Pane eventKey="#link1">
                 <Main />
@@ -65,9 +65,9 @@ const Sidebar = () => {
               </Tab.Pane>
             </Tab.Content>
           </Col>
-          <Col className="person-detail" lg={3}>
+          {/* <Col className="person-detail" lg={3}>
             <div>hello</div>
-          </Col>
+          </Col> */}
         </Row>
       </Tab.Container>
     </div>

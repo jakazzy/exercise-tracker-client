@@ -4,7 +4,7 @@
 
 .sidebar {
   overflow: hidden;
-  background-color: yellow;
+  background-color: #f4f3ef;
 }
 .list-group {
   padding: 30px 0 30px 30px !important;
@@ -19,7 +19,7 @@
 
 .list-group-item.active {
   color: black !important;
-  background-color: white !important;
+  background-color: #f4f3ef !important;
   border-color: white !important;
   position: relative;
   border-radius: 1.5rem 0 0 1.5rem;
@@ -72,6 +72,9 @@ a.list-group-item:active {
   color: white !important;
   /* margin: 20px; */
   outline: none;
+}
+a.list-group-item.active:hover {
+  color: black !important;
 }
 
 svg {
