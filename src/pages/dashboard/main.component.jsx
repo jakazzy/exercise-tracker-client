@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Row, Col } from 'react-bootstrap'
 import Training from '../../images/personal_training.svg'
-// import Search from '../../components/search_input/search.components'
+import Search from '../../components/search_input/search.components'
 
 import './main.styles.css'
 
@@ -12,21 +12,38 @@ const Main = () => {
         <Row
           style={{
             height: '5rem',
-            backgroundColor: 'blue',
+            // backgroundColor: 'blue',
             width: '60rem',
             margin: '2rem auto'
           }}>
-          <Col xs={6}>
-            <h2>Dashboard</h2>
+          <Col
+            style={{ color: '#66615b', textAlign: 'left', fontSize: '1.3rem' }}
+            xs={6}>
+            <p>Dashboard</p>
+          </Col>
+          <Col xs={3} style={{ color: '#66615b', fontSize: '0.9rem' }}>
+            <p>6th Sept 2020</p>
           </Col>
           <Col xs={3}>
-            <p>Date of the day</p>
+            <Search />
           </Col>
-          <Col xs={3}>{/* <Search /> */}</Col>
         </Row>
       </div>
       <Card>
         <Card.Body style={{ position: 'relative', height: '12rem' }}>
+          <div
+            style={{
+              textAlign: 'left',
+              margin: '2rem 2rem 2rem 3rem',
+              padding: '1rem',
+              fontSize: '1.2rem'
+            }}>
+            {' '}
+            <p>
+              <b>Hello Musa,</b>{' '}
+            </p>
+            <p>Today is a great day to be fit</p>
+          </div>
           <img
             src={Training}
             alt="Exercise"

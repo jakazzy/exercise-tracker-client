@@ -1,18 +1,25 @@
 import React from 'react'
+import { Form } from 'react-bootstrap'
 import './search.styles.css'
 
 const Search = () => {
   return (
-    <div id="wrap">
-      <form action="" autocomplete="on">
-        <input
-          id="search"
-          name="search"
-          type="text"
-          placeholder="What're we looking for ?"
-        />
-        <input id="search_submit" value="Rechercher" type="submit" />
-      </form>
+    <div>
+      <Form>
+        <Form.Group controlId="search">
+          <Form.Control
+            type="text"
+            id="search"
+            placeholder="Search..."
+            style={{
+              backgroundColor: 'hsla(0,0%,87.1%,.3)',
+              color: '#66615b',
+              border: 'none',
+              fontSize: '0.8rem'
+            }}
+          />
+        </Form.Group>
+      </Form>
     </div>
   )
 }
