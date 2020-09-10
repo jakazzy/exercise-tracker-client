@@ -1,34 +1,14 @@
 import React from 'react'
-import { Card, Row, Col } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import Training from '../../images/personal_training.svg'
-import Search from '../../components/search_input/search.components'
+import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
 
 import './main.styles.css'
 
 const Main = () => {
   return (
     <div style={{ width: '60rem', margin: '2rem auto' }}>
-      <div className="dashboard-header">
-        <Row
-          style={{
-            height: '5rem',
-            // backgroundColor: 'blue',
-            width: '60rem',
-            margin: '2rem auto'
-          }}>
-          <Col
-            style={{ color: '#66615b', textAlign: 'left', fontSize: '1.3rem' }}
-            xs={6}>
-            <p>Dashboard</p>
-          </Col>
-          <Col xs={3} style={{ color: '#66615b', fontSize: '0.9rem' }}>
-            <p>6th Sept 2020</p>
-          </Col>
-          <Col xs={3}>
-            <Search />
-          </Col>
-        </Row>
-      </div>
+      <DashboardNavbar />
       <Card
         className="shadow border-0"
         style={{

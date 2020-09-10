@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <div>
       <Form>
-        <Form.Group controlId="search">
+        <Form.Group>
           <Form.Control
             type="text"
             id="search"
