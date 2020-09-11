@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card, Form } from 'react-bootstrap'
+import { Card, Form, Row, Col } from 'react-bootstrap'
+import './settings.styles.css'
 
 const Settings = () => {
   return (
@@ -7,30 +8,51 @@ const Settings = () => {
       <Card>
         <Card.Header>Settings page</Card.Header>
         <Card.Body>
-          <Form style={{ width: '40rem', margin: '0 auto' }}>
-            <Form.File id="image-upload">
+          <Form style={{ width: '30rem', margin: '0 auto' }}>
+            <Form.File
+              style={{ margin: ' 0 1rem 1rem 1rem' }}
+              id="image-upload">
               <Form.File.Label>Change Profile picture</Form.File.Label>
               <Form.File.Input />
             </Form.File>
-            <Form.Group controlId="formGroupEmail">
-              <Form.Label>Change email Address </Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+            <Form.Group as={Row} controlId="formGroupEmail">
+              <Form.Label column sm={5}>
+                Change email Address{' '}
+              </Form.Label>
+              <Col sm={7}>
+                <Form.Control type="email" placeholder="Enter email" />
+              </Col>
             </Form.Group>
             <p>Change Password</p>
-            <Form.Group controlId="formGroupPassword1">
-              <Form.Label> Enter previous password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder=" Enter previous password"
-              />
+            <Form.Group as={Row} controlId="formGroupPassword1">
+              <Form.Label column sm={5}>
+                {' '}
+                Enter old password
+              </Form.Label>
+              <Col sm={7}>
+                <Form.Control
+                  type="password"
+                  placeholder=" Enter previous password"
+                />
+              </Col>
             </Form.Group>
-            <Form.Group controlId="formGroupPassword2">
-              <Form.Label> Enter new password</Form.Label>
-              <Form.Control type="password" placeholder="New password" />
+            <Form.Group as={Row} controlId="formGroupPassword2">
+              <Form.Label column sm={5}>
+                {' '}
+                Enter new password
+              </Form.Label>
+              <Col sm={7}>
+                <Form.Control type="password" placeholder="New password" />
+              </Col>
             </Form.Group>
-            <Form.Group controlId="phonenumber">
-              <Form.Label> Enter phonenumber</Form.Label>
-              <Form.Control type="text" placeholder="New phonenumber" />
+            <Form.Group as={Row} controlId="phonenumber">
+              <Form.Label column sm={5}>
+                {' '}
+                Enter phonenumber
+              </Form.Label>
+              <Col sm={7}>
+                <Form.Control type="text" placeholder="New phonenumber" />
+              </Col>
             </Form.Group>
             <Form.Check
               type="switch"
