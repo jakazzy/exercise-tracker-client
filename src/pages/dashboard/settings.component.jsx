@@ -23,7 +23,9 @@ const Settings = () => {
                 <Form.Control type="email" placeholder="Enter email" />
               </Col>
             </Form.Group>
-            <p>Change Password</p>
+            <p style={{ textAlign: 'left', marginLeft: '1rem' }}>
+              Change Password
+            </p>
             <Form.Group as={Row} controlId="formGroupPassword1">
               <Form.Label column sm={5}>
                 {' '}
