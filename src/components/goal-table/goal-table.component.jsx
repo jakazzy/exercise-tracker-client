@@ -2,12 +2,12 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa'
 
-const ScheduleTable = () => {
+const GoalTable = () => {
   return (
-    <div>
+    <div style={{ margin: '3rem' }}>
       <Card>
         <h3 className="card-header text-center font-weight-bold text-uppercase py-4">
-          Schedule table
+          Goal table
         </h3>
         <Card.Body>
           <div id="table" className="table-editable">
@@ -20,41 +20,25 @@ const ScheduleTable = () => {
               <thead>
                 <tr>
                   <th className="text-center">#</th>
-                  <th className="text-center">Sunday</th>
-                  <th className="text-center">Monday</th>
-                  <th className="text-center">Tuesday</th>
-                  <th className="text-center">Wednesday</th>
-                  <th className="text-center">Thursday</th>
-                  <th className="text-center">Friday</th>
-                  <th className="text-center">Saturday</th>
+                  <th className="text-center">Goal</th>
+                  <th className="text-center">Action Steps</th>
+                  <th className="text-center">Week(s)</th>
                   <th className="text-center">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="pt-3-half" contenteditable="true">
-                    Aurelia Vega
+                    1
                   </td>
                   <td className="pt-3-half" contenteditable="true">
-                    30
+                    Build abs
                   </td>
                   <td className="pt-3-half" contenteditable="true">
                     Deepends
                   </td>
                   <td className="pt-3-half" contenteditable="true">
                     Spain
-                  </td>
-                  <td className="pt-3-half" contenteditable="true">
-                    Madrid
-                  </td>
-                  <td className="pt-3-half" contenteditable="true">
-                    Madrid
-                  </td>
-                  <td className="pt-3-half" contenteditable="true">
-                    Madrid
-                  </td>
-                  <td className="pt-3-half" contenteditable="true">
-                    Madrid
                   </td>
                   <td>
                     <span className="table-remove">
@@ -76,4 +60,4 @@ const ScheduleTable = () => {
   )
 }
 
-export default ScheduleTable
+export default GoalTable
