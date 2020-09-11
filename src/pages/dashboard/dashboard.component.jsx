@@ -5,7 +5,7 @@ import { AiOutlineSchedule, AiFillWechat } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { FaUserFriends } from 'react-icons/fa'
 
-import Chat from './chat.component'
+import Settings from './settings.component'
 import InviteFriend from './invite-friend.component.jsx'
 import Profile from './profile.component'
 import Schedule from './schedule.component'
@@ -58,7 +58,7 @@ const Sidebar = () => {
                 <Profile />
               </Tab.Pane>
               <Tab.Pane eventKey="#link4">
-                <Chat />
+                <Settings />
               </Tab.Pane>
               <Tab.Pane eventKey="#link5">
                 <InviteFriend />
