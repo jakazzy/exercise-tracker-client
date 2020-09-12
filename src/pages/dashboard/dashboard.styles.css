@@ -1,5 +1,6 @@
 .dashboard-brand {
   margin: 5rem 0;
+  color: mistyrose;
 }
 
 .sidebar {
@@ -12,7 +13,7 @@
 }
 .list-group-item {
   background-color: rgb(82, 185, 192) !important;
-  color: black !important;
+  color: mistyrose !important;
   border: none !important;
   text-align: left !important;
 }
