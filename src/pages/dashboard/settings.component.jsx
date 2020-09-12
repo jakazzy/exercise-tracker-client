@@ -1,10 +1,12 @@
 import React from 'react'
 import { Card, Form, Row, Col } from 'react-bootstrap'
+import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
 import './settings.styles.css'
 
 const Settings = () => {
   return (
     <div style={{ width: '60rem', margin: '2rem auto' }}>
+      <DashboardNavbar page="settings" />
       <Card>
         <Card.Header>Settings page</Card.Header>
         <Card.Body>

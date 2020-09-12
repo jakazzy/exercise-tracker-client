@@ -11,7 +11,7 @@ import ExerciseProgress from './exercise-progress.component'
 const Main = () => {
   return (
     <div style={{ width: '60rem', margin: '2rem auto' }}>
-      <DashboardNavbar />
+      <DashboardNavbar page="main" />
       <Card
         className="shadow border-0"
         style={{

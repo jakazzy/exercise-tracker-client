@@ -32,28 +32,52 @@ const ScheduleTable = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Aurelia Vega
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     30
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Deepends
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Spain
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Madrid
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Madrid
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Madrid
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Madrid
                   </td>
                   <td>

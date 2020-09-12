@@ -28,16 +28,28 @@ const GoalTable = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     1
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Build abs
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Deepends
                   </td>
-                  <td className="pt-3-half" contenteditable="true">
+                  <td
+                    className="pt-3-half"
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}>
                     Spain
                   </td>
                   <td>
