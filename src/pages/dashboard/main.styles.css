@@ -7,10 +7,10 @@
 }
 
 .graphs {
-  display: flex;
+  /* display: flex; */
 }
 .card-section {
-  height: 15rem;
+  height: 24rem;
   width: 100%;
   background-color: blue;
   margin: 2rem 0;
@@ -32,7 +32,7 @@
 .first-metric,
 .second-metric,
 .third-metric {
-  background-color: red;
+  /* border: 1px solid grey; */
   padding-bottom: 0.4rem;
   border-radius: 1rem;
 }
@@ -47,12 +47,18 @@
 .graph-hr,
 .graph-cal,
 .graph-distance {
-  width: 46%;
-  height: 5rem;
+  width: 39%;
+  height: 4rem;
   border-radius: 1rem;
-  background-color: blue;
+  /* background-color:rgb(178, 217, 220); */
+  background-color: rgb(82, 185, 192);
 }
 
 .card-section-metrics {
   height: 11rem;
+}
+
+.graph-icon {
+  font-size: 3rem;
+  color: mistyrose;
 }
