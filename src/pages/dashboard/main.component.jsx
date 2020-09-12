@@ -41,17 +41,35 @@ const Main = () => {
       </Card>
       {/* </Container> */}
       {/* graph */}
+      <Card className="shadow border-0 card-section card-section-metrics">
+        <Card.Body className="metrics">
+          <div className="first-metric">
+            <div className="first-metric-items">
+              <p>Heart Rate</p>
+              <div className="graph-hr"></div>
+            </div>
+            <p> 71 beats per min</p>
+          </div>
+          <div className="second-metric">
+            <div className="second-metric-items">
+              <p>Calories </p>
+              <div className="graph-cal"></div>
+            </div>
+            <p> 300KCal</p>
+          </div>
+          <div className="third-metric">
+            <div className="third-metric-items">
+              <p>Distance </p>
+              <div className="graph-distance"></div>
+            </div>
+            <p> 300KCal</p>
+          </div>
+        </Card.Body>
+      </Card>
       <Card className="shadow border-0 card-section">
         <Card.Body className="graphs">
           <div className="first-graph">hi</div>
           <div className="second-graph">hello</div>
-        </Card.Body>
-      </Card>
-      <Card className="shadow border-0 card-section">
-        <Card.Body className="metrics">
-          <div className="first-metric">hi</div>
-          <div className="second-metric">hello</div>
-          <div className="third-metric">you</div>
         </Card.Body>
       </Card>
     </div>

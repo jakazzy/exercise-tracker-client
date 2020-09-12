@@ -22,12 +22,37 @@
 .first-metric,
 .second-metric,
 .third-metric {
-  width: 30%;
+  width: 25%;
 }
 .metrics {
   display: flex;
-  /* height: 12rem;
-  width: 100%;
+  justify-content: space-between;
+}
+
+.first-metric,
+.second-metric,
+.third-metric {
+  background-color: red;
+  padding-bottom: 0.4rem;
+  border-radius: 1rem;
+}
+.first-metric-items,
+.second-metric-items,
+.third-metric-items {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.graph-hr,
+.graph-cal,
+.graph-distance {
+  width: 46%;
+  height: 5rem;
+  border-radius: 1rem;
   background-color: blue;
-  margin-bottom: 3rem; */
+}
+
+.card-section-metrics {
+  height: 11rem;
 }
