@@ -6,7 +6,7 @@ import ProfileForm from '../../components/profile-form/profile-form.component'
 const Profile = () => {
   return (
     <div style={{ width: '72rem', margin: '2rem auto' }}>
-      <DashboardNavbar />
+      <DashboardNavbar page="profile" />
       <div
         className="card-groups"
         style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -30,24 +30,24 @@ const Profile = () => {
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
               longer.
-              <hr />
-              <div
-                className="profile-description"
-                style={{ display: 'flex', justifyContent: 'space-around' }}>
-                <div className="height">
-                  <p>height</p>
-                  <p>5.3/F</p>
-                </div>
-                <div className="weight">
-                  <p>weight</p>
-                  <p>50/kg</p>
-                </div>
-                <div className="age">
-                  <p>age</p>
-                  <p>23/y</p>
-                </div>
-              </div>
             </Card.Text>
+            <hr />
+            <div
+              className="profile-description"
+              style={{ display: 'flex', justifyContent: 'space-around' }}>
+              <div className="height">
+                <p>height</p>
+                <p>5.3/F</p>
+              </div>
+              <div className="weight">
+                <p>weight</p>
+                <p>50/kg</p>
+              </div>
+              <div className="age">
+                <p>age</p>
+                <p>23/y</p>
+              </div>
+            </div>
           </Card.Body>
         </Card>
 

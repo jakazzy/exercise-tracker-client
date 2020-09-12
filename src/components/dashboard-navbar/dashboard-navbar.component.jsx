@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import Search from '../search_input/search.components'
 
-const DashboardNavbar = () => {
+const DashboardNavbar = ({ page }) => {
   return (
     <div className="dashboard-header">
       <Row
@@ -21,7 +21,7 @@ const DashboardNavbar = () => {
           <p>6th Sept 2020</p>
         </Col>
         <Col xs={3}>
-          <Search />
+          <Search page={page} />
         </Col>
       </Row>
     </div>

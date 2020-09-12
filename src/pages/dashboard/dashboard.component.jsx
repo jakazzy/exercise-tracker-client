@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ListGroup, Tab, Row, Col } from 'react-bootstrap'
 import { RiDashboardLine } from 'react-icons/ri'
 import { AiOutlineSchedule, AiFillWechat } from 'react-icons/ai'
@@ -6,14 +6,19 @@ import { CgProfile } from 'react-icons/cg'
 import { FaUserFriends } from 'react-icons/fa'
 
 import Settings from './settings.component'
-import InviteFriend from './invite-friend.component.jsx'
+// import InviteFriend from './invite-friend.component.jsx'
 import Profile from './profile.component'
 import Schedule from './schedule.component'
 import Main from './main.component'
 
 import './dashboard.styles.css'
+import InviteModal from '../../components/modal/modal.component'
 
 const Sidebar = () => {
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
     <div className="sidebar">
       <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
@@ -40,11 +45,12 @@ const Sidebar = () => {
                 <AiFillWechat />
                 Settings
               </ListGroup.Item>
-              <ListGroup.Item action href="#link5">
+              <ListGroup.Item onClick={handleShow}>
                 <FaUserFriends />
                 Invite Friends
               </ListGroup.Item>
             </ListGroup>
+            <InviteModal show={show} handleClose={handleClose} />
           </Col>
           <Col sm={8} lg={9}>
             <Tab.Content>
@@ -60,9 +66,9 @@ const Sidebar = () => {
               <Tab.Pane eventKey="#link4">
                 <Settings />
               </Tab.Pane>
-              <Tab.Pane eventKey="#link5">
+              {/* <Tab.Pane eventKey="#link5">
                 <InviteFriend />
-              </Tab.Pane>
+              </Tab.Pane> */}
             </Tab.Content>
           </Col>
           {/* <Col className="person-detail" lg={3}>

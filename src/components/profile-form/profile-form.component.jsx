@@ -34,11 +34,6 @@ const ProfileForm = () => {
         <Form.Control placeholder="1234 Main St" />
       </Form.Group>
 
-      {/* <Form.Group controlId="formGridAddress2">
-        <Form.Label>Address 2</Form.Label>
-        <Form.Control placeholder="Apartment, studio, or floor" />
-      </Form.Group> */}
-
       <Form.Row>
         <Form.Group as={Col} controlId="formGridCity">
           <Form.Label>City</Form.Label>
@@ -58,10 +53,6 @@ const ProfileForm = () => {
           <Form.Control />
         </Form.Group>
       </Form.Row>
-
-      {/* <Form.Group id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group> */}
 
       <Button
         style={{

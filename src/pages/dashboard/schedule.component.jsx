@@ -6,7 +6,7 @@ import GoalTable from '../../components/goal-table/goal-table.component'
 const Schedule = () => {
   return (
     <div style={{ width: '70rem', margin: '2rem auto' }}>
-      <DashboardNavbar />
+      <DashboardNavbar page="schedule" />
       <ScheduleTable />
       <GoalTable />
     </div>
