@@ -14,13 +14,16 @@ import './signup.styles.css'
 
 const Signup = () => {
   const { register, handleSubmit, errors } = useForm()
-  const notify = () => toast('Wow so easy !')
 
   const onSubmit = async data => {
-    console.log('Are you triggered')
-    console.log(data, 'input data')
-    notify()
-    await createNewUser(data)
+    try {
+      console.log(data, 'input data')
+      const resp = await createNewUser(data)
+      console.log(resp, 'Are you triggered')
+      toast(resp.data.message, { type: 'info' })
+    } catch (error) {
+      toast(error.message, { type: 'error' })
+    }
   }
 
   const responseFacebook = async response => {
