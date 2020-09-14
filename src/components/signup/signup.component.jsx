@@ -7,15 +7,19 @@ import { useForm } from 'react-hook-form'
 import FacebookLogin from 'react-facebook-login'
 import GoogleLogin from 'react-google-login'
 import { FACEBOOK, GOOGLE } from '../../config/config'
+import { ToastContainer, toast } from 'react-toastify'
 
 import { createNewUser, oauth } from '../../api/api'
 import './signup.styles.css'
 
 const Signup = () => {
   const { register, handleSubmit, errors } = useForm()
+  const notify = () => toast('Wow so easy !')
 
   const onSubmit = async data => {
+    console.log('Are you triggered')
     console.log(data, 'input data')
+    notify()
     await createNewUser(data)
   }
 
@@ -112,6 +116,7 @@ const Signup = () => {
               {' '}
               Sign up
             </Button>
+            <ToastContainer position="top-center" />
             <div className="login-or">
               <span className="span-or">OR</span>
               <hr className="hr-or" />

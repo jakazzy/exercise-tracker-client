@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 export const createNewUser = async data => {
+  console.log(data, 'Are you available')
   try {
     const result = await axios({
       method: 'post',
