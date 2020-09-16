@@ -10,15 +10,15 @@ import Settings from './settings.component'
 import Profile from './profile.component'
 import Schedule from './schedule.component'
 import Main from './main.component'
+import InviteModal from '../../components/modal/modal.component'
 
 import './dashboard.styles.css'
-import InviteModal from '../../components/modal/modal.component'
 
 const Sidebar = () => {
   const [show, setShow] = useState(false)
-
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+
   return (
     <div className="sidebar">
       <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">

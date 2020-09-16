@@ -4,9 +4,10 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
-import FacebookLogin from 'react-facebook-login'
+// import FacebookLogin from 'react-facebook-login'
 import GoogleLogin from 'react-google-login'
-import { FACEBOOK, GOOGLE } from '../../config/config'
+import { GOOGLE } from '../../config/config'
+// import { FACEBOOK, GOOGLE } from '../../config/config'
 import { ToastContainer, toast } from 'react-toastify'
 
 import { createNewUser, oauth } from '../../api/api'
@@ -19,16 +20,21 @@ const Signup = () => {
     try {
       console.log(data, 'input data')
       const resp = await createNewUser(data)
-      console.log(resp, 'Are you triggered')
       toast(resp.data.message, { type: 'info' })
     } catch (error) {
       toast(error.message, { type: 'error' })
     }
   }
 
-  const responseFacebook = async response => {
-    console.log(response)
-    await oauth('facebook', response.accessToken)
+  // const responseFacebook = async response => {
+  //   console.log(response)
+  //   await oauth('facebook', response.accessToken)
+  // }
+
+  const _handleSignInClick = () => {
+    // Authenticate using via passport api in the backend
+    // Open facebook login page
+    window.open(`${process.env.REACT_APP_BASE_URL}/auth/facebook`, '_self')
   }
   const responseGoogle = async response => {
     console.log(response)
@@ -119,14 +125,14 @@ const Signup = () => {
               {' '}
               Sign up
             </Button>
-            <ToastContainer position="top-center" />
+
             <div className="login-or">
               <span className="span-or">OR</span>
               <hr className="hr-or" />
             </div>
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
-              <FacebookLogin
+              {/* <FacebookLogin
                 appId={FACEBOOK.clientId}
                 fields="name,email,picture"
                 callback={responseFacebook}
@@ -135,7 +141,8 @@ const Signup = () => {
                   <i className="fa fa-facebook-square" aria-hidden="true"></i>
                 }
                 textButton="&nbsp;&nbsp;Sign In with Facebook"
-              />
+              /> */}
+              <Button onClick={_handleSignInClick}>Facebook login</Button>
               <GoogleLogin
                 clientId={GOOGLE.clientId}
                 buttonText="&nbsp;&nbsp;Sign In with Google"
@@ -147,6 +154,7 @@ const Signup = () => {
           </Form>
         </Container>
       </Card.Body>
+      <ToastContainer position="top-center"></ToastContainer>
     </Card>
   )
 }
