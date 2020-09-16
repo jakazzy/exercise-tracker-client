@@ -4,13 +4,13 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
-// import FacebookLogin from 'react-facebook-login'
-import GoogleLogin from 'react-google-login'
-import { GOOGLE } from '../../config/config'
-// import { FACEBOOK, GOOGLE } from '../../config/config'
 import { ToastContainer, toast } from 'react-toastify'
 
-import { createNewUser, oauth } from '../../api/api'
+import {
+  FacebookButton,
+  GoogleButton
+} from '../oauth-buttons/oauth-buttons.component'
+import { createNewUser } from '../../api/api'
 import './signup.styles.css'
 
 const Signup = () => {
@@ -26,20 +26,6 @@ const Signup = () => {
     }
   }
 
-  // const responseFacebook = async response => {
-  //   console.log(response)
-  //   await oauth('facebook', response.accessToken)
-  // }
-
-  const _handleSignInClick = () => {
-    // Authenticate using via passport api in the backend
-    // Open facebook login page
-    window.open(`${process.env.REACT_APP_BASE_URL}/auth/facebook`, '_self')
-  }
-  const responseGoogle = async response => {
-    console.log(response)
-    await oauth('google', response.accessToken)
-  }
   return (
     <Card
       style={{
@@ -142,14 +128,8 @@ const Signup = () => {
                 }
                 textButton="&nbsp;&nbsp;Sign In with Facebook"
               /> */}
-              <Button onClick={_handleSignInClick}>Facebook login</Button>
-              <GoogleLogin
-                clientId={GOOGLE.clientId}
-                buttonText="&nbsp;&nbsp;Sign In with Google"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                className="social-button google-button btn btn-outline-danger"
-              />
+              <FacebookButton />
+              <GoogleButton />
             </div>
           </Form>
         </Container>

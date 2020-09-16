@@ -4,10 +4,12 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
-import FacebookLogin from 'react-facebook-login'
-import GoogleLogin from 'react-google-login'
 
-import { loginUser, oauth } from '../../api/api'
+import {
+  FacebookButton,
+  GoogleButton
+} from '../../components/oauth-buttons/oauth-buttons.component'
+import { loginUser } from '../../api/api'
 import './signin.styles.css'
 
 const Signin = () => {
@@ -16,16 +18,6 @@ const Signin = () => {
   const onSubmit = async data => {
     console.log(data, 'this is login data')
     await loginUser(data)
-  }
-
-  const responseFacebook = async response => {
-    console.log(response)
-    await oauth('facebook', response.accessToken)
-  }
-
-  const responseGoogle = async response => {
-    console.log(response)
-    await oauth('google', response.accessToken)
   }
 
   return (
@@ -95,7 +87,7 @@ const Signin = () => {
                 <Card.Link href="/reset-password">Forgot password</Card.Link>
               </Col>
             </Form.Row>
-            <Button className="btn-bg-color" type="submit" block>
+            <Button className="btn-bg-color btn btn-danger" type="submit" block>
               {' '}
               Sign in
             </Button>
@@ -105,23 +97,8 @@ const Signin = () => {
             </div>
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
-              <FacebookLogin
-                appId="1088597931155576"
-                fields="name,email,picture"
-                callback={responseFacebook}
-                cssClass="btn btn-primary social-button"
-                icon={
-                  <i className="fa fa-facebook-square" aria-hidden="true"></i>
-                }
-                textButton="&nbsp;&nbsp;Sign In with Facebook"
-              />
-              <GoogleLogin
-                clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-                buttonText="&nbsp;&nbsp;Sign In with Google"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                className="social-button google-button btn btn-outline-danger"
-              />
+              <FacebookButton />
+              <GoogleButton />
             </div>
           </Form>
         </Container>
