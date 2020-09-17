@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { Spinner } from 'react-bootstrap'
 import queryString from 'query-string'
 
 import { confirmation } from '../../api/api'
-import SigninPage from '../signin-page/signin-page.component'
-import ResendToken from '../resend-token/resend-token.component'
+// import SigninPage from '../signin-page/signin-page.component'
+// import ResendToken from '../resend-token/resend-token.component'
 
 const Confirmation = props => {
   // eslint-disable-next-line no-unused-vars
@@ -23,8 +24,21 @@ const Confirmation = props => {
     fetchData()
     // console.log(fetchData(), 'i just fetched data too')
   }, [props.location.search, value])
+  let page
 
-  const page = value.confirmed ? <SigninPage /> : <ResendToken />
+  if (value.confirmed === '') {
+    page = (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    )
+  }
+  if (value.confirmed) {
+    page = props.history.push('/login')
+  }
+  if (value.confirmed === false) {
+    page = props.history.push('/resend-token')
+  }
 
   return <div>{page}</div>
 }

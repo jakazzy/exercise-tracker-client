@@ -22,6 +22,7 @@ export const loginUser = async data => {
     })
     return result
   } catch (error) {
+    console.log(error, 'this is the error')
     return error
   }
 }

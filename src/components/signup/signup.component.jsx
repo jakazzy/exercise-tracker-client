@@ -22,7 +22,8 @@ const Signup = () => {
       const resp = await createNewUser(data)
       toast(resp.data.message, { type: 'info' })
     } catch (error) {
-      toast(error.message, { type: 'error' })
+      console.log(error.message)
+      toast('Sign up unsuccessful', { type: 'error' })
     }
   }
 

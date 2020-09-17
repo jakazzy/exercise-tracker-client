@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
+import { ToastContainer, toast } from 'react-toastify'
+import { useHistory } from 'react-router-dom'
 
 import {
   FacebookButton,
@@ -13,11 +15,21 @@ import { loginUser } from '../../api/api'
 import './signin.styles.css'
 
 const Signin = () => {
+  const history = useHistory()
   const { handleSubmit, register, errors } = useForm()
 
   const onSubmit = async data => {
-    console.log(data, 'this is login data')
-    await loginUser(data)
+    try {
+      const resp = await loginUser(data)
+      toast(resp.data.message, { type: 'info' })
+      setTimeout(() => {
+        console.log('This will run after 1 second!')
+        history.push('/dashboard')
+      }, 2500)
+    } catch (error) {
+      console.log(error.message)
+      toast('Log in unsuccessful', { type: 'error' })
+    }
   }
 
   return (
@@ -103,6 +115,7 @@ const Signin = () => {
           </Form>
         </Container>
       </Card.Body>
+      <ToastContainer position="top-center"></ToastContainer>
     </Card>
   )
 }
