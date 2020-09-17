@@ -3,6 +3,7 @@ import { Card, Row, Col } from 'react-bootstrap'
 import Training from '../../images/personal_training.svg'
 import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
 import { RiPulseLine, RiFireFill, RiRunFill } from 'react-icons/ri'
+import { ToastContainer } from 'react-toastify'
 import Chart from './chart.component'
 
 import './main.styles.css'
@@ -87,6 +88,7 @@ const Main = () => {
           </Col>
         </Card.Body>
       </Card>
+      <ToastContainer position="top-right"></ToastContainer>
     </div>
   )
 }

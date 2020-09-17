@@ -9,7 +9,7 @@ export const createNewUser = async data => {
     })
     return result
   } catch (error) {
-    console.log(error.message)
+    return error
   }
 }
 
@@ -22,7 +22,8 @@ export const loginUser = async data => {
     })
     return result
   } catch (error) {
-    console.log(error)
+    console.log(error, 'this is the error')
+    return error
   }
 }
 
@@ -36,7 +37,7 @@ export const oauth = async (media, accessToken) => {
     console.log(result, 'i see you')
     return result
   } catch (error) {
-    console.log(error)
+    return error
   }
 }
 
@@ -50,5 +51,19 @@ export const confirmation = async token => {
     return result
   } catch (error) {
     console.log(error)
+    return error
+  }
+}
+
+export const loginSuccess = async () => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `${process.env.REACT_APP_BASE_URL}/loginsuccess`
+    })
+    return result
+  } catch (error) {
+    console.log(error)
+    return error
   }
 }

@@ -4,29 +4,29 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
-import FacebookLogin from 'react-facebook-login'
-import GoogleLogin from 'react-google-login'
-import { FACEBOOK, GOOGLE } from '../../config/config'
+import { ToastContainer, toast } from 'react-toastify'
 
-import { createNewUser, oauth } from '../../api/api'
+import {
+  FacebookButton,
+  GoogleButton
+} from '../oauth-buttons/oauth-buttons.component'
+import { createNewUser } from '../../api/api'
 import './signup.styles.css'
 
 const Signup = () => {
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = async data => {
-    console.log(data, 'input data')
-    await createNewUser(data)
+    try {
+      console.log(data, 'input data')
+      const resp = await createNewUser(data)
+      toast(resp.data.message, { type: 'info' })
+    } catch (error) {
+      console.log(error.message)
+      toast('Sign up unsuccessful', { type: 'error' })
+    }
   }
 
-  const responseFacebook = async response => {
-    console.log(response)
-    await oauth('facebook', response.accessToken)
-  }
-  const responseGoogle = async response => {
-    console.log(response)
-    await oauth('google', response.accessToken)
-  }
   return (
     <Card
       style={{
@@ -112,13 +112,14 @@ const Signup = () => {
               {' '}
               Sign up
             </Button>
+
             <div className="login-or">
               <span className="span-or">OR</span>
               <hr className="hr-or" />
             </div>
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
-              <FacebookLogin
+              {/* <FacebookLogin
                 appId={FACEBOOK.clientId}
                 fields="name,email,picture"
                 callback={responseFacebook}
@@ -127,18 +128,14 @@ const Signup = () => {
                   <i className="fa fa-facebook-square" aria-hidden="true"></i>
                 }
                 textButton="&nbsp;&nbsp;Sign In with Facebook"
-              />
-              <GoogleLogin
-                clientId={GOOGLE.clientId}
-                buttonText="&nbsp;&nbsp;Sign In with Google"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                className="social-button google-button btn btn-outline-danger"
-              />
+              /> */}
+              <FacebookButton />
+              <GoogleButton />
             </div>
           </Form>
         </Container>
       </Card.Body>
+      <ToastContainer position="top-center"></ToastContainer>
     </Card>
   )
 }

@@ -13,5 +13,14 @@ https://fireart.studio/blog/user-interface-design-for-a-fitness-app/
 
 https://www.myfitnesspal.com/
 
-References for Search Bar
-https://codepen.io/CBeghin/pen/HeuiF
+References for Dashboard
+
+https://dribbble.com/shots/11369541-Fitness-Dashboard-Concept/attachments/2982244?mode=media
+
+https://dribbble.com/shots/8365090-Dashboard-Design-Yoga/attachments/689890?mode=media
+
+http://preview.themeforest.net/item/midone-vuejs-admin-dashboard-template/full_screen_preview/28123408
+
+https://www.creative-tim.com/live/black-dashboard-django
+
+https://demos.creative-tim.com/paper-dashboard-react/#/admin/tables
