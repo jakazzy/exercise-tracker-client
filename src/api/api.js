@@ -13,6 +13,18 @@ export const createNewUser = async data => {
   }
 }
 
+export const updateNewUser = async (data, id) => {
+  try {
+    const result = await axios({
+      method: 'put',
+      url: `${process.env.REACT_APP_BASE_URL}/user/${id}`,
+      data
+    })
+    return result
+  } catch (error) {
+    return error
+  }
+}
 export const loginUser = async data => {
   try {
     const result = await axios({
