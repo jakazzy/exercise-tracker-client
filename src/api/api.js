@@ -39,12 +39,11 @@ export const loginUser = async data => {
   }
 }
 
-export const oauth = async (media, accessToken) => {
+export const oauth = async (route, media) => {
   try {
     const result = await axios({
-      method: 'post',
-      url: `${process.env.REACT_APP_BASE_URL}/auth/${media}`,
-      accessToken
+      method: 'get',
+      url: `${process.env.REACT_APP_BASE_URL}/${route}/${media}`
     })
     console.log(result, 'i see you')
     return result

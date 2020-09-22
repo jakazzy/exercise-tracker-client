@@ -129,8 +129,8 @@ const Signup = () => {
                 }
                 textButton="&nbsp;&nbsp;Sign In with Facebook"
               /> */}
-              <FacebookButton />
-              <GoogleButton />
+              <FacebookButton text="Sign in with Facebook" route="auth" />
+              <GoogleButton text="Sign in with Google" route="auth" />
             </div>
           </Form>
         </Container>

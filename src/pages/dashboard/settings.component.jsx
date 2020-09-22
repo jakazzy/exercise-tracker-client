@@ -1,6 +1,10 @@
 import React from 'react'
 import { Card, Form, Row, Col } from 'react-bootstrap'
 import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
+import {
+  FacebookButton,
+  GoogleButton
+} from '../../components/oauth-buttons/oauth-buttons.component'
 import './settings.styles.css'
 
 const Settings = () => {
@@ -11,12 +15,17 @@ const Settings = () => {
         <Card.Header>Settings page</Card.Header>
         <Card.Body>
           <Form style={{ width: '30rem', margin: '0 auto' }}>
-            <Form.File
-              style={{ margin: ' 0 1rem 1rem 1rem' }}
-              id="image-upload">
-              <Form.File.Label>Change Profile picture</Form.File.Label>
-              <Form.File.Input />
-            </Form.File>
+            <Form.Group>
+              <Form.Label> Linked Accounts</Form.Label>
+              <FacebookButton text="Connect Facebook" route="auth" />
+              <GoogleButton text="Connect Google" route="auth" />
+            </Form.Group>
+            <Form.Group as={Row} style={{ margin: '3rem 1rem 1rem 1rem' }}>
+              <Form.File id="image-upload">
+                <Form.File.Label>Change Profile picture</Form.File.Label>
+                <Form.File.Input />
+              </Form.File>
+            </Form.Group>
             <Form.Group as={Row} controlId="formGroupEmail">
               <Form.Label column sm={5}>
                 Change email Address{' '}
