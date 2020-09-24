@@ -78,3 +78,28 @@ export const loginSuccess = async () => {
     return error
   }
 }
+
+export const signout = async () => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `${process.env.REACT_APP_BASE_URL}/signout`
+    })
+    return result
+  } catch (error) {
+    console.log(error)
+    return error
+  }
+}
+export const checkStatus = async () => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `${process.env.REACT_APP_BASE_URL}/checkstatus`
+    })
+    return result
+  } catch (error) {
+    console.log(error)
+    return error
+  }
+}
