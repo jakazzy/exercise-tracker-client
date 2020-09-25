@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
 import {
   FacebookButton,
   GoogleButton
 } from '../../components/oauth-buttons/oauth-buttons.component'
+import { settings } from '../../api/api'
+
 import './settings.styles.css'
 
 const Settings = () => {
+  const [notify, setNotify] = useState(true)
+  const [mode, setMode] = useState(true)
+
+  useEffect(() => {
+    const result = async () => {
+      const data = { mode, notify }
+      await settings(data)
+    }
+    result()
+  }, [notify, mode])
+
   return (
     <div style={{ width: '60rem', margin: '2rem auto' }}>
       <DashboardNavbar page="settings" />
@@ -15,7 +28,7 @@ const Settings = () => {
         <Card.Header>Settings page</Card.Header>
         <Card.Body>
           <Form style={{ width: '30rem', margin: '0 auto' }}>
-            <Form.Group>
+            <Form.Group style={{ marginBottom: '3rem' }}>
               <Form.Label> Linked Accounts</Form.Label>
               <FacebookButton text="Connect Facebook" route="auth" />
               <GoogleButton text="Connect Google" route="auth" />
@@ -69,13 +82,17 @@ const Settings = () => {
             </Form.Group> */}
             <Form.Check
               type="switch"
+              name="mode"
               id="switch-darkmode"
+              onClick={() => setMode(!mode)}
               label="Turn  on Dark Mode"
             />
             <Form.Check
               type="switch"
+              name="notify"
               id="custom-switch"
-              label="Turn on Notifications"
+              onClick={() => setNotify(!notify)}
+              label="Turn on Notification"
             />
           </Form>
         </Card.Body>

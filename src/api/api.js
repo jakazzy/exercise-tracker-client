@@ -117,3 +117,16 @@ export const updateUser = async (data, token) => {
     return error
   }
 }
+
+export const settings = async data => {
+  try {
+    const result = await axios({
+      method: 'put',
+      url: `${process.env.REACT_APP_BASE_URL}/settings`,
+      data
+    })
+    return result
+  } catch (error) {
+    return error
+  }
+}
