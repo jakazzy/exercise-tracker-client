@@ -130,3 +130,16 @@ export const settings = async data => {
     return error
   }
 }
+
+export const inviteFriend = async data => {
+  try {
+    const result = await axios({
+      method: 'post',
+      url: `${process.env.REACT_APP_BASE_URL}/invitefriend`,
+      data
+    })
+    return result
+  } catch (error) {
+    return error
+  }
+}

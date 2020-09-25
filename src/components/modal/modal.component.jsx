@@ -1,13 +1,21 @@
 import React from 'react'
 import { Modal, Button, Form } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
+import { inviteFriend } from '../../api/api'
+import { ToastContainer, toast } from 'react-toastify'
 
 const InviteModal = ({ show, handleClose }) => {
-  const [register, handleSubmit, errors] = useForm()
+  const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = async data => {
     try {
-      console.log(data)
+      const response = await inviteFriend(data)
+      console.log(data, response)
+      if (response.data.success) {
+        toast.info(`Email invite successfully sent to ${data.email}`)
+      } else {
+        toast.error(`Email invite failed`)
+      }
     } catch (error) {
       console.log(error)
     }
@@ -22,6 +30,7 @@ const InviteModal = ({ show, handleClose }) => {
           <Form.Group controlId="inviteEmail">
             <Form.Control
               type="email"
+              name="email"
               ref={register({
                 required: 'Email is required',
                 pattern: {
@@ -45,6 +54,7 @@ const InviteModal = ({ show, handleClose }) => {
           </Button>
         </Modal.Footer>
       </Form>
+      <ToastContainer position="top-center"></ToastContainer>
     </Modal>
   )
 }

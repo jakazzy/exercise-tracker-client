@@ -11,8 +11,8 @@ import { settings } from '../../api/api'
 import './settings.styles.css'
 
 const Settings = () => {
-  const [notify, setNotify] = useState(true)
-  const [mode, setMode] = useState(true)
+  const [notify, setNotify] = useState(false)
+  const [mode, setMode] = useState(false)
 
   useEffect(() => {
     const result = async () => {
