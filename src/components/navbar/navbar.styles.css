@@ -1,3 +1,7 @@
 .link-text {
   color: white !important;
 }
+
+.auth-link {
+  display: inline-block;
+}

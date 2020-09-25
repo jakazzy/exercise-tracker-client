@@ -35,6 +35,7 @@ const Main = () => {
           <img
             src={Training}
             alt="Exercise"
+            loading="lazy"
             width="250"
             height="250"
             style={{ position: 'absolute', top: '-6rem' }}

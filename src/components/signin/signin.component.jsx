@@ -109,8 +109,8 @@ const Signin = () => {
             </div>
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
-              <FacebookButton />
-              <GoogleButton />
+              <FacebookButton text="Sign in with Facebook" route="auth" />
+              <GoogleButton text="Sign in with Google" route="auth" />
             </div>
           </Form>
         </Container>

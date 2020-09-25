@@ -11,10 +11,16 @@ const Profile = () => {
         className="card-groups"
         style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Card style={{ width: '27rem', height: '25rem', position: 'relative' }}>
-          <Card.Img variant="top" src={GymImage} style={{ height: '6rem' }} />
           <Card.Img
             variant="top"
             src={GymImage}
+            loading="lazy"
+            style={{ height: '6rem' }}
+          />
+          <Card.Img
+            variant="top"
+            src={GymImage}
+            loading="lazy"
             style={{
               height: '7rem',
               width: '7rem',
