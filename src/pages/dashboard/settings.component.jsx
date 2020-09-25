@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Form } from 'react-bootstrap'
+import { ToastContainer, toast } from 'react-toastify'
 import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
 import {
   FacebookButton,
@@ -17,6 +18,12 @@ const Settings = () => {
     const result = async () => {
       const data = { mode, notify }
       await settings(data)
+      if (notify) {
+        toast('Notifications have been put on', { type: 'info' })
+      }
+    }
+    if (mode) {
+      toast('Dark mode put on', { type: 'info' })
     }
     result()
   }, [notify, mode])
@@ -97,6 +104,7 @@ const Settings = () => {
           </Form>
         </Card.Body>
       </Card>
+      <ToastContainer position="top-center"></ToastContainer>
     </div>
   )
 }
