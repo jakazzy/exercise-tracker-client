@@ -7,6 +7,7 @@ const CardItem = ({ width, img, info }) => {
       <Card.Img
         variant="top"
         src={img}
+        loading="lazy"
         style={{ height: '10rem', paddingTop: '1rem' }}
       />
       <Card.Body>

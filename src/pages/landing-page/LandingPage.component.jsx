@@ -8,11 +8,14 @@ import ControlledCarousel from '../../components/carousel/carousel.component'
 import { cardData } from '../../data/data'
 import CardItem from '../../components/card/card.component'
 import Footer from '../../components/footer/footer'
+import AuthContextProvider from '../../contexts/AuthContext'
 
 const LandingPage = () => {
   return (
     <div style={{ overflowX: 'hidden' }}>
-      <HomeNavbar />
+      <AuthContextProvider>
+        <HomeNavbar />
+      </AuthContextProvider>
       <section className="welcome-message">
         <div className="CTA-message">
           <h1> MAKE IT HAPPEN. SHOCK EVERYONE</h1>
@@ -26,8 +29,18 @@ const LandingPage = () => {
         <div className="landing-page-container">
           <div className="rounded-divider"></div>
           <div className="landing-page-images">
-            <img src={Stability} alt="stability" className="stability" />
-            <img src={WorkOut} alt="workout" className="work-out" />
+            <img
+              src={Stability}
+              alt="stability"
+              loading="lazy"
+              className="stability"
+            />
+            <img
+              src={WorkOut}
+              alt="workout"
+              loading="lazy"
+              className="work-out"
+            />
           </div>
         </div>
       </section>

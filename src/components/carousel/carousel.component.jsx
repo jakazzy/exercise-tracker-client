@@ -22,6 +22,7 @@ const ControlledCarousel = () => {
           className="d-block w-100"
           src={ProfilePic}
           alt="First slide"
+          loading="lazy"
           style={{ width: '10rem', height: '10rem' }}
         />
         <Carousel.Caption>
@@ -33,6 +34,7 @@ const ControlledCarousel = () => {
         <img
           className="d-block w-100"
           src={Male}
+          loading="lazy"
           alt="Second slide"
           style={{ width: '10rem', height: '10rem' }}
         />
@@ -47,6 +49,7 @@ const ControlledCarousel = () => {
           className="d-block w-100"
           src={Female}
           alt="Third slide"
+          loading="lazy"
           style={{ width: '10rem', height: '10rem' }}
         />
 

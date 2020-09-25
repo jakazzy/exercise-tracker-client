@@ -1,7 +1,7 @@
 import React from 'react'
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 import { FaRegUser } from 'react-icons/fa'
-
+import { signout } from '../../api/api'
 const Title = props => {
   return (
     <span>
@@ -10,13 +10,15 @@ const Title = props => {
   )
 }
 const ProfileMenu = ({ username }) => {
-  const signout = () => {}
+  const signOut = async () => {
+    await signout()
+  }
   return (
     <DropdownButton
       id="profile-menu"
       title={<Title username={username} />}
       variant="info">
-      <Dropdown.Item onClick={signout}>Sign out</Dropdown.Item>
+      <Dropdown.Item onClick={signOut}>Sign out</Dropdown.Item>
     </DropdownButton>
   )
 }

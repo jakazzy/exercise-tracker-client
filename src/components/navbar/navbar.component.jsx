@@ -1,17 +1,38 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import { AuthContext } from '../../contexts/AuthContext'
+import { signout } from '../../api/api'
 
 import './navbar.styles.css'
 const HomeNavbar = () => {
+  const {
+    auth: { token, isAuthenticated }
+  } = useContext(AuthContext)
+
+  const signOut = async () => {
+    await signout()
+  }
   return (
     <div>
       <Navbar>
         <Container>
           <Navbar.Brand href="#home">GOALTRACKER</Navbar.Brand>
-          <Nav classname="kjh">
-            <Nav.Link href="/login"> Log in</Nav.Link>
-            <Nav.Link href="/signup"> Sign up</Nav.Link>
+          <Nav className="kjh">
+            {!token && !isAuthenticated ? (
+              <span>
+                <Nav.Link className="auth-link" href="/login">
+                  {' '}
+                  Log in
+                </Nav.Link>
+                <Nav.Link className="auth-link" href="/signup">
+                  {' '}
+                  Sign up
+                </Nav.Link>
+              </span>
+            ) : (
+              <Nav.Link onClick={signOut}>sign out</Nav.Link>
+            )}
           </Nav>
         </Container>
       </Navbar>
