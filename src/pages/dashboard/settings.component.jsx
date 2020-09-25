@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Form, Row, Col } from 'react-bootstrap'
+import { Card, Form } from 'react-bootstrap'
 import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
 import {
   FacebookButton,
@@ -20,24 +20,24 @@ const Settings = () => {
               <FacebookButton text="Connect Facebook" route="auth" />
               <GoogleButton text="Connect Google" route="auth" />
             </Form.Group>
-            <Form.Group as={Row} style={{ margin: '3rem 1rem 1rem 1rem' }}>
+            {/* <Form.Group as={Row} style={{ margin: '3rem 1rem 1rem 1rem' }}>
               <Form.File id="image-upload">
                 <Form.File.Label>Change Profile picture</Form.File.Label>
                 <Form.File.Input />
               </Form.File>
-            </Form.Group>
-            <Form.Group as={Row} controlId="formGroupEmail">
+            </Form.Group> */}
+            {/* <Form.Group as={Row} controlId="formGroupEmail">
               <Form.Label column sm={5}>
                 Change email Address{' '}
               </Form.Label>
               <Col sm={7}>
                 <Form.Control type="email" placeholder="Enter email" />
               </Col>
-            </Form.Group>
-            <p style={{ textAlign: 'left', marginLeft: '1rem' }}>
+            </Form.Group> */}
+            {/* <p style={{ textAlign: 'left', marginLeft: '1rem' }}>
               Change Password
-            </p>
-            <Form.Group as={Row} controlId="formGroupPassword1">
+            </p> */}
+            {/* <Form.Group as={Row} controlId="formGroupPassword1">
               <Form.Label column sm={5}>
                 {' '}
                 Enter old password
@@ -57,8 +57,8 @@ const Settings = () => {
               <Col sm={7}>
                 <Form.Control type="password" placeholder="New password" />
               </Col>
-            </Form.Group>
-            <Form.Group as={Row} controlId="phonenumber">
+            </Form.Group> */}
+            {/* <Form.Group as={Row} controlId="phonenumber">
               <Form.Label column sm={5}>
                 {' '}
                 Enter phonenumber
@@ -66,7 +66,7 @@ const Settings = () => {
               <Col sm={7}>
                 <Form.Control type="text" placeholder="New phonenumber" />
               </Col>
-            </Form.Group>
+            </Form.Group> */}
             <Form.Check
               type="switch"
               id="switch-darkmode"
