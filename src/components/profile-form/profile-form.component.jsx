@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Form, Col, Button } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { ToastContainer, toast } from 'react-toastify'
 import { yupResolver } from '@hookform/resolvers'
 import * as Yup from 'yup'
 
-import { updateNewUser } from '../../api/api'
+import { AuthContext } from '../../contexts/AuthContext'
+import { updateUser } from '../../api/api'
 
 const ProfileForm = () => {
   const schema = Yup.object().shape({
-    firstName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!'),
-    lastName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!'),
+    firstname: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!'),
+    lastname: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!'),
     email: Yup.string().email('Invalid email'),
     phonenumber: Yup.string(),
     age: Yup.number(),
@@ -19,15 +20,28 @@ const ProfileForm = () => {
     about: Yup.string()
   })
 
+  const {
+    auth: { token }
+  } = useContext(AuthContext)
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = async (data, id) => {
+  const onSubmit = async data => {
+    console.log(
+      // token,
+      // '&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'
+      data,
+      'what is happening now'
+    )
+    const finalData = { ...data, username: data.firstname }
     try {
-      const resp = await updateNewUser(data, id)
-      if (resp) {
+      const resp = await updateUser(finalData, token)
+      console.log(resp, 'this is resp')
+      if (resp.data) {
         toast.info('user profile updated')
+      } else {
+        toast.error('Unable to update user profile')
       }
     } catch (error) {
       toast.error('Unable to update user profile')
@@ -38,15 +52,16 @@ const ProfileForm = () => {
       <p>Edit Profile</p>
 
       <Form.Row>
-        <Form.Group as={Col} controlId="firstname">
+        <Form.Group as={Col} controlId="username">
           <Form.Label>First name</Form.Label>
           <Form.Control
             type="text"
             name="firstname"
+            default="jida"
             placeholder="First name"
             ref={register}></Form.Control>
           {errors.firstname && (
-            <p className="error-message">{errors.firstName.message}</p>
+            <p className="error-message">{errors.firstname.message}</p>
           )}
         </Form.Group>
 
@@ -55,10 +70,11 @@ const ProfileForm = () => {
           <Form.Control
             type="text"
             name="lastname"
+            default="asare"
             placeholder="Last name"
             ref={register}></Form.Control>
-          {errors.lastName && (
-            <p className="error-message">{errors.lastName.message}</p>
+          {errors.lastname && (
+            <p className="error-message">{errors.lastname.message}</p>
           )}
         </Form.Group>
       </Form.Row>
@@ -69,6 +85,7 @@ const ProfileForm = () => {
           <Form.Control
             type="email"
             name="email"
+            default="jakazzy@gmail.com"
             placeholder="Enter email"
             ref={register}></Form.Control>
           {errors.email && (
@@ -81,6 +98,7 @@ const ProfileForm = () => {
           <Form.Control
             type="text"
             placeholder="Enter phone number"
+            default="+233546678765"
             ref={register}
             name="phonenumber"></Form.Control>
           {errors.phonenumber && (
@@ -94,7 +112,8 @@ const ProfileForm = () => {
           <Form.Label>Height/m</Form.Label>
           <Form.Control
             type="number"
-            placeholder="1.5m"
+            placeholder="1.5"
+            default="5"
             ref={register}
             name="height"
           />
@@ -106,13 +125,12 @@ const ProfileForm = () => {
         <Form.Group as={Col} controlId="formGridWeight">
           <Form.Label>Weight/kg</Form.Label>
           <Form.Control
-            as="select"
+            type="number"
             defaultValue="Choose..."
+            placeholder="45"
+            default="45"
             name="weight"
-            ref={register}>
-            <option>Choose...</option>
-            <option>...</option>
-          </Form.Control>
+            ref={register}></Form.Control>
           {errors.weight && (
             <p className="error-message">{errors.weight.message}</p>
           )}
@@ -123,6 +141,7 @@ const ProfileForm = () => {
           <Form.Control
             type="nuumber"
             placeholder="23years"
+            default="25"
             ref={register}
             name="age"></Form.Control>
           {errors.age && <p className="error-message">{errors.age.message}</p>}
@@ -135,6 +154,7 @@ const ProfileForm = () => {
           placeholder="Lorem ipsum dolor sit amet consectetur."
           type="text"
           name="about"
+          default="Lorem ipsum dolor sit amet consectetur."
           ref={register}></Form.Control>
         {errors.about && (
           <p className="error-message">{errors.about.message}</p>

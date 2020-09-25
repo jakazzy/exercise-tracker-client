@@ -13,18 +13,18 @@ export const createNewUser = async data => {
   }
 }
 
-export const updateNewUser = async (data, id) => {
-  try {
-    const result = await axios({
-      method: 'put',
-      url: `${process.env.REACT_APP_BASE_URL}/user/${id}`,
-      data
-    })
-    return result
-  } catch (error) {
-    return error
-  }
-}
+// export const updateNewUser = async (data, id) => {
+//   try {
+//     const result = await axios({
+//       method: 'put',
+//       url: `${process.env.REACT_APP_BASE_URL}/user/${id}`,
+//       data
+//     })
+//     return result
+//   } catch (error) {
+//     return error
+//   }
+// }
 export const loginUser = async data => {
   try {
     const result = await axios({
@@ -97,9 +97,23 @@ export const checkStatus = async () => {
       method: 'get',
       url: `${process.env.REACT_APP_BASE_URL}/checkstatus`
     })
+    console.log(result, 'are you there')
     return result
   } catch (error) {
-    console.log(error)
+    console.log(error.message, 'why 403')
+    return error
+  }
+}
+
+export const updateUser = async (data, token) => {
+  try {
+    const result = await axios({
+      method: 'put',
+      url: `${process.env.REACT_APP_BASE_URL}/users/${token}`,
+      data
+    })
+    return result
+  } catch (error) {
     return error
   }
 }
