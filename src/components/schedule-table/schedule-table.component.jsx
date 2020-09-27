@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa'
+import { v4 as uuidv4 } from 'uuid'
 
 import './schedule-table.styles.css'
 
@@ -18,10 +19,9 @@ const ScheduleTable = () => {
     }
   ])
   const addNewRow = () => {
-    const id = activities.length + 1
     const newActivities = [
       {
-        week: id,
+        week: uuidv4(),
         sunday: 'Aurelia Vega',
         monday: 'Aurelia Vega',
         tuesday: 'Aurelia Vega',
@@ -35,7 +35,9 @@ const ScheduleTable = () => {
   }
 
   const removeRow = id => {
-    const filteredData = activities.filter(activity => activity.week === id)
+    console.log(id)
+    const filteredData = activities.filter(activity => activity.week !== id)
+    console.log(filteredData)
     setActivities([...filteredData])
   }
   return (
@@ -68,8 +70,8 @@ const ScheduleTable = () => {
                 </thead>
                 <tbody>
                   {activities.map((activity, index) => (
-                    <tr key={activities.week}>
-                      <td className="pt-3-half">{activity.week}</td>
+                    <tr key={activity.week}>
+                      <td className="pt-3-half">{index + 1}</td>
                       <td className="pt-3-half">
                         <Form.Group className="form-text-area" controlId="1">
                           <Form.Control
@@ -145,7 +147,7 @@ const ScheduleTable = () => {
                           <button
                             type="button"
                             className="btn btn-danger btn-rounded btn-sm my-0"
-                            onClick={() => removeRow(activities.week)}>
+                            onClick={() => removeRow(activity.week)}>
                             Remove
                           </button>
                         </span>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa'
+import { v4 as uuidv4 } from 'uuid'
 
 import './goal-table.styles.css'
 
@@ -15,10 +16,9 @@ const GoalTable = () => {
   ])
 
   const addNewGoalRow = () => {
-    const newId = goals.length + 1
     const newGoal = [
       {
-        id: newId,
+        id: uuidv4(),
         exercise: 'Build Abs',
         steps: 'exercise',
         duration: 'three'
@@ -29,7 +29,7 @@ const GoalTable = () => {
   }
 
   const removenewGoalRow = id => {
-    const filteredGoalTable = goals.filter(goal => goal.id === id)
+    const filteredGoalTable = goals.filter(goal => goal.id !== id)
     setGoals([...filteredGoalTable])
   }
   return (
@@ -57,9 +57,9 @@ const GoalTable = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {goals.map(goal => (
+                  {goals.map((goal, index) => (
                     <tr key={goal.id}>
-                      <td className="pt-3-half">{goal.id}</td>
+                      <td className="pt-3-half">{index + 1}</td>
                       <td className="pt-3-half">
                         <Form.Group className="form-text-area" controlId="1">
                           <Form.Control
