@@ -68,7 +68,7 @@ const ScheduleTable = () => {
                 </thead>
                 <tbody>
                   {activities.map((activity, index) => (
-                    <tr key={index}>
+                    <tr key={activities.week}>
                       <td className="pt-3-half">{activity.week}</td>
                       <td className="pt-3-half">
                         <Form.Group className="form-text-area" controlId="1">

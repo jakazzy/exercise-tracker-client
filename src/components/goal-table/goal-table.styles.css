@@ -1,0 +1,17 @@
+.input-text-area {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+  outline: none;
+  resize: none;
+  overflow: auto;
+}
+
+.form-text-area {
+  margin-bottom: 0;
+}
+
+span.plus-icon {
+  cursor: pointer;
+}
