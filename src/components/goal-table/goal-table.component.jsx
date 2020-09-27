@@ -28,13 +28,26 @@ const GoalTable = () => {
     setGoals([...goals, ...newGoal])
   }
 
-  const removenewGoalRow = id => {
+  const removeNewGoalRow = id => {
     const filteredGoalTable = goals.filter(goal => goal.id !== id)
     setGoals([...filteredGoalTable])
   }
 
-  const handleChange = () => {}
-  const handleBlur = () => {}
+  const handleChange = (e, id) => {
+    let newGoals = goals.filter(goal => goal.id === id)[0]
+    newGoals = { ...newGoals, [e.target.name]: e.target.value }
+    const changeGoals = goals.map(goal => {
+      if (goal.id === id) {
+        return { ...goal, ...newGoals }
+      }
+      return goal
+    })
+
+    setGoals([...changeGoals])
+  }
+  const handleBlur = () => {
+    console.log(goals)
+  }
   return (
     <div style={{ margin: '3rem' }}>
       <Card>
@@ -70,6 +83,7 @@ const GoalTable = () => {
                             as="textarea"
                             cols="5"
                             rows="2"
+                            name="exercise"
                             onBlur={e => handleBlur(e)}
                             onChange={e => handleChange(e, goal.id)}
                             value={goal.exercise}></Form.Control>
@@ -82,6 +96,7 @@ const GoalTable = () => {
                             as="textarea"
                             cols="10"
                             rows="2"
+                            name="steps"
                             onBlur={e => handleBlur(e)}
                             onChange={e => handleChange(e, goal.id)}
                             value={goal.steps}></Form.Control>
@@ -94,6 +109,7 @@ const GoalTable = () => {
                             as="textarea"
                             cols="5"
                             rows="2"
+                            name="duration"
                             onBlur={e => handleBlur(e)}
                             onChange={e => handleChange(e, goal.id)}
                             value={goal.duration}></Form.Control>
@@ -104,7 +120,7 @@ const GoalTable = () => {
                           <button
                             type="button"
                             className="btn btn-danger btn-rounded btn-sm my-0"
-                            onClick={() => removenewGoalRow(goal.id)}>
+                            onClick={() => removeNewGoalRow(goal.id)}>
                             Remove
                           </button>
                         </span>
