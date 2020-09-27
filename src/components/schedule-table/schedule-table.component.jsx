@@ -18,6 +18,7 @@ const ScheduleTable = () => {
       saturday: 'Aurelia Vega'
     }
   ])
+
   const addNewRow = () => {
     const newActivities = [
       {
@@ -35,10 +36,27 @@ const ScheduleTable = () => {
   }
 
   const removeRow = id => {
-    console.log(id)
     const filteredData = activities.filter(activity => activity.week !== id)
-    console.log(filteredData)
     setActivities([...filteredData])
+  }
+
+  const handleChange = (e, week) => {
+    let newActivities = activities.filter(activity => activity.week === week)[0]
+    newActivities = { ...newActivities, [e.target.name]: e.target.value }
+    const changeActivity = activities.map(activity => {
+      if (activity.week === week) {
+        return { ...activity, ...newActivities }
+      }
+      return activity
+    })
+    setActivities([...changeActivity])
+    // console.log(e.target.name)
+    // console.log(e.target.value)
+  }
+
+  const handleBlur = e => {
+    console.log(activities)
+    // console.log(e.target.value)
   }
   return (
     <div>
@@ -87,9 +105,12 @@ const ScheduleTable = () => {
                           <Form.Control
                             className="input-text-area"
                             as="textarea"
+                            name="monday"
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, activity.week)}
                             cols="10"
                             rows="2"
-                            defaultValue={activity.monday}></Form.Control>
+                            value={activity.monday}></Form.Control>
                         </Form.Group>
                       </td>
                       <td className="pt-3-half">
