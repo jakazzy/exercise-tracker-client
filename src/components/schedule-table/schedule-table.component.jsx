@@ -97,7 +97,9 @@ const ScheduleTable = () => {
                             as="textarea"
                             cols="10"
                             rows="2"
-                            defaultValue={activity.sunday}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, activity.week)}
+                            value={activity.sunday}></Form.Control>
                         </Form.Group>
                       </td>
                       <td className="pt-3-half">
@@ -120,7 +122,9 @@ const ScheduleTable = () => {
                             as="textarea"
                             cols="10"
                             rows="2"
-                            defaultValue={activity.tuesday}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, activity.week)}
+                            value={activity.tuesday}></Form.Control>
                         </Form.Group>
                       </td>
                       <td className="pt-3-half">
@@ -130,7 +134,9 @@ const ScheduleTable = () => {
                             as="textarea"
                             cols="10"
                             rows="2"
-                            defaultValue={activity.wednesday}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, activity.week)}
+                            value={activity.wednesday}></Form.Control>
                         </Form.Group>
                       </td>
                       <td className="pt-3-half">
@@ -140,7 +146,9 @@ const ScheduleTable = () => {
                             as="textarea"
                             cols="10"
                             rows="2"
-                            defaultValue={activity.thursday}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, activity.week)}
+                            value={activity.thursday}></Form.Control>
                         </Form.Group>
                       </td>
                       <td className="pt-3-half">
@@ -150,7 +158,9 @@ const ScheduleTable = () => {
                             as="textarea"
                             cols="10"
                             rows="2"
-                            defaultValue={activity.friday}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, activity.week)}
+                            value={activity.friday}></Form.Control>
                         </Form.Group>
                       </td>
                       <td className="pt-3-half">
@@ -160,7 +170,9 @@ const ScheduleTable = () => {
                             as="textarea"
                             cols="10"
                             rows="2"
-                            defaultValue={activity.saturday}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, activity.week)}
+                            value={activity.saturday}></Form.Control>
                         </Form.Group>
                       </td>
                       <td>

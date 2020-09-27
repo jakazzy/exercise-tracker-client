@@ -32,6 +32,9 @@ const GoalTable = () => {
     const filteredGoalTable = goals.filter(goal => goal.id !== id)
     setGoals([...filteredGoalTable])
   }
+
+  const handleChange = () => {}
+  const handleBlur = () => {}
   return (
     <div style={{ margin: '3rem' }}>
       <Card>
@@ -67,7 +70,9 @@ const GoalTable = () => {
                             as="textarea"
                             cols="5"
                             rows="2"
-                            defaultValue={goal.exercise}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, goal.id)}
+                            value={goal.exercise}></Form.Control>
                         </Form.Group>
                       </td>
                       <td className="pt-3-half">
@@ -77,7 +82,9 @@ const GoalTable = () => {
                             as="textarea"
                             cols="10"
                             rows="2"
-                            defaultValue={goal.steps}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, goal.id)}
+                            value={goal.steps}></Form.Control>
                         </Form.Group>
                       </td>
                       <td className="pt-3-half">
@@ -87,7 +94,9 @@ const GoalTable = () => {
                             as="textarea"
                             cols="5"
                             rows="2"
-                            defaultValue={goal.duration}></Form.Control>
+                            onBlur={e => handleBlur(e)}
+                            onChange={e => handleChange(e, goal.id)}
+                            value={goal.duration}></Form.Control>
                         </Form.Group>
                       </td>
                       <td>
