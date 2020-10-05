@@ -21,9 +21,9 @@ const Settings = () => {
       if (notify) {
         toast('Notifications have been put on', { type: 'info' })
       }
-    }
-    if (mode) {
-      toast('Dark mode put on', { type: 'info' })
+      if (mode) {
+        toast('Dark mode put on', { type: 'info' })
+      }
     }
     result()
   }, [notify, mode])

@@ -97,7 +97,6 @@ export const checkStatus = async () => {
       method: 'get',
       url: `${process.env.REACT_APP_BASE_URL}/checkstatus`
     })
-    console.log(result, 'are you there')
     return result
   } catch (error) {
     console.log(error.message, 'why 403')
@@ -140,6 +139,49 @@ export const inviteFriend = async data => {
     })
     return result
   } catch (error) {
+    return error
+  }
+}
+
+export const updateSchedule = async data => {
+  try {
+    const result = await axios({
+      method: 'put',
+      url: `${process.env.REACT_APP_BASE_URL}/updateschedule`,
+      data
+    })
+    console.log(result)
+    return result
+  } catch (error) {
+    console.log(error)
+    return error
+  }
+}
+
+export const updateGoal = async data => {
+  try {
+    const result = await axios({
+      method: 'put',
+      url: `${process.env.REACT_APP_BASE_URL}/updategoal`,
+      data
+    })
+    console.log(result)
+    return result
+  } catch (error) {
+    console.log(error)
+    return error
+  }
+}
+
+export const getScheduleAndGoal = async () => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `${process.env.REACT_APP_BASE_URL}/getscheduleandgoal`
+    })
+    return result
+  } catch (error) {
+    console.log(error)
     return error
   }
 }

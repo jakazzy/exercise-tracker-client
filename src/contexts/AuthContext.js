@@ -1,24 +1,33 @@
 import React, { useState, useEffect, createContext } from 'react'
-import { checkStatus } from '../api/api'
+import { checkStatus, getScheduleAndGoal } from '../api/api'
 
 export const AuthContext = createContext()
 const AuthContextProvider = props => {
   const [auth, setAuth] = useState({
     isAuthenticated: true,
+    message: '',
+    user: '',
     token:
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjAxMDMwNjM3LCJleHAiOjE2MDExMTcwMzd9.zqx9qxyptAa0gIO4jlnsi3LxRzifYvckuaShJ1ZrDFM'
   })
 
+  const [schedule, setSchedule] = useState([])
+  const [goal, setGoal] = useState([])
+
   useEffect(() => {
-    const authStatus = async () => {
-      const result = await checkStatus()
-      // setAuth({ ...result.data })
-      return result.data
+    const userData = async () => {
+      const status = await checkStatus()
+      const { data } = await getScheduleAndGoal()
+      console.log(data, 'isee schedule and goal')
+      setAuth({ ...status.data })
+      setSchedule(data.schedule)
+      setGoal(data.goal)
+      // return status.data
     }
-    authStatus()
-  }, [auth])
+    userData()
+  }, [])
   return (
-    <AuthContext.Provider value={{ auth, setAuth }}>
+    <AuthContext.Provider value={{ auth, goal, schedule }}>
       {props.children}
     </AuthContext.Provider>
   )
