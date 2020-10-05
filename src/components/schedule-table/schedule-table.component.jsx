@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa'
 import { v4 as uuidv4 } from 'uuid'
+import { updateSchedule } from '../../api/api'
+import { AuthContext } from '../../contexts/AuthContext'
 
 import './schedule-table.styles.css'
 
 const ScheduleTable = () => {
+  const { schedule } = useContext(AuthContext)
   const [activities, setActivities] = useState([
     {
       week: 1,
@@ -19,25 +22,44 @@ const ScheduleTable = () => {
     }
   ])
 
-  const addNewRow = () => {
-    const newActivities = [
-      {
-        week: uuidv4(),
-        sunday: 'Aurelia Vega',
-        monday: 'Aurelia Vega',
-        tuesday: 'Aurelia Vega',
-        wednesday: 'Aurelia Vega',
-        thursday: 'Aurelia Vega',
-        friday: 'Aurelia Vega',
-        saturday: 'Aurelia Vega'
+  useEffect(() => {
+    const scheduleData = () => {
+      // if (activities.week) {
+      //   result = updateSchedule(activities)
+      // }
+      // console.log(auth)
+      if (schedule && schedule.length > activities.length) {
+        setActivities(schedule)
       }
-    ]
-    setActivities([...activities, ...newActivities])
+      // return result
+      console.log(activities, '******************************')
+    }
+    scheduleData()
+    // disable react-hooks/exhaustive-deps for this line
+  }, [activities, schedule])
+
+  const addNewRow = () => {
+    const newActivities = {
+      week: uuidv4(),
+      sunday: 'Aurelia Vega',
+      monday: 'Aurelia Vega',
+      tuesday: 'Aurelia Vega',
+      wednesday: 'Aurelia Vega',
+      thursday: 'Aurelia Vega',
+      friday: 'Aurelia Vega',
+      saturday: 'Aurelia Vega'
+    }
+    const currentActivities = activities
+      ? [...activities, newActivities]
+      : [newActivities]
+
+    setActivities(currentActivities)
   }
 
-  const removeRow = id => {
+  const removeRow = async id => {
     const filteredData = activities.filter(activity => activity.week !== id)
     setActivities([...filteredData])
+    await updateSchedule(filteredData)
   }
 
   const handleChange = (e, week) => {
@@ -54,9 +76,9 @@ const ScheduleTable = () => {
     // console.log(e.target.value)
   }
 
-  const handleBlur = e => {
-    console.log(activities)
-    // console.log(e.target.value)
+  const handleBlur = async e => {
+    const result = await updateSchedule(activities)
+    console.log(result)
   }
   return (
     <div>
@@ -87,106 +109,128 @@ const ScheduleTable = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {activities.map((activity, index) => (
-                    <tr key={activity.week}>
-                      <td className="pt-3-half">{index + 1}</td>
-                      <td className="pt-3-half">
-                        <Form.Group className="form-text-area" controlId="1">
-                          <Form.Control
-                            className="input-text-area"
-                            as="textarea"
-                            cols="10"
-                            rows="2"
-                            onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, activity.week)}
-                            value={activity.sunday}></Form.Control>
-                        </Form.Group>
-                      </td>
-                      <td className="pt-3-half">
-                        <Form.Group className="form-text-area" controlId="2">
-                          <Form.Control
-                            className="input-text-area"
-                            as="textarea"
-                            name="monday"
-                            onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, activity.week)}
-                            cols="10"
-                            rows="2"
-                            value={activity.monday}></Form.Control>
-                        </Form.Group>
-                      </td>
-                      <td className="pt-3-half">
-                        <Form.Group className="form-text-area" controlId="3">
-                          <Form.Control
-                            className="input-text-area"
-                            as="textarea"
-                            cols="10"
-                            rows="2"
-                            onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, activity.week)}
-                            value={activity.tuesday}></Form.Control>
-                        </Form.Group>
-                      </td>
-                      <td className="pt-3-half">
-                        <Form.Group className="form-text-area" controlId="4">
-                          <Form.Control
-                            className="input-text-area"
-                            as="textarea"
-                            cols="10"
-                            rows="2"
-                            onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, activity.week)}
-                            value={activity.wednesday}></Form.Control>
-                        </Form.Group>
-                      </td>
-                      <td className="pt-3-half">
-                        <Form.Group className="form-text-area" controlId="5">
-                          <Form.Control
-                            className="input-text-area"
-                            as="textarea"
-                            cols="10"
-                            rows="2"
-                            onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, activity.week)}
-                            value={activity.thursday}></Form.Control>
-                        </Form.Group>
-                      </td>
-                      <td className="pt-3-half">
-                        <Form.Group className="form-text-area" controlId="6">
-                          <Form.Control
-                            className="input-text-area"
-                            as="textarea"
-                            cols="10"
-                            rows="2"
-                            onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, activity.week)}
-                            value={activity.friday}></Form.Control>
-                        </Form.Group>
-                      </td>
-                      <td className="pt-3-half">
-                        <Form.Group className="form-text-area" controlId="7">
-                          <Form.Control
-                            className="input-text-area"
-                            as="textarea"
-                            cols="10"
-                            rows="2"
-                            onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, activity.week)}
-                            value={activity.saturday}></Form.Control>
-                        </Form.Group>
-                      </td>
-                      <td>
-                        <span className="table-remove">
-                          <button
-                            type="button"
-                            className="btn btn-danger btn-rounded btn-sm my-0"
-                            onClick={() => removeRow(activity.week)}>
-                            Remove
-                          </button>
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+                  {activities
+                    ? activities.map((activity, index) => (
+                        <tr key={activity.week}>
+                          <td className="pt-3-half">{index + 1}</td>
+                          <td className="pt-3-half">
+                            <Form.Group
+                              className="form-text-area"
+                              controlId="1">
+                              <Form.Control
+                                className="input-text-area"
+                                as="textarea"
+                                cols="10"
+                                rows="2"
+                                name="sunday"
+                                onBlur={e => handleBlur(e)}
+                                onChange={e => handleChange(e, activity.week)}
+                                value={activity.sunday}></Form.Control>
+                            </Form.Group>
+                          </td>
+                          <td className="pt-3-half">
+                            <Form.Group
+                              className="form-text-area"
+                              controlId="2">
+                              <Form.Control
+                                className="input-text-area"
+                                as="textarea"
+                                name="monday"
+                                onBlur={e => handleBlur(e)}
+                                onChange={e => handleChange(e, activity.week)}
+                                cols="10"
+                                rows="2"
+                                value={activity.monday}></Form.Control>
+                            </Form.Group>
+                          </td>
+                          <td className="pt-3-half">
+                            <Form.Group
+                              className="form-text-area"
+                              controlId="3">
+                              <Form.Control
+                                className="input-text-area"
+                                as="textarea"
+                                cols="10"
+                                rows="2"
+                                name="tuesday"
+                                onBlur={e => handleBlur(e)}
+                                onChange={e => handleChange(e, activity.week)}
+                                value={activity.tuesday}></Form.Control>
+                            </Form.Group>
+                          </td>
+                          <td className="pt-3-half">
+                            <Form.Group
+                              className="form-text-area"
+                              controlId="4">
+                              <Form.Control
+                                className="input-text-area"
+                                as="textarea"
+                                cols="10"
+                                rows="2"
+                                name="wednesday"
+                                onBlur={e => handleBlur(e)}
+                                onChange={e => handleChange(e, activity.week)}
+                                value={activity.wednesday}></Form.Control>
+                            </Form.Group>
+                          </td>
+                          <td className="pt-3-half">
+                            <Form.Group
+                              className="form-text-area"
+                              controlId="5">
+                              <Form.Control
+                                className="input-text-area"
+                                as="textarea"
+                                cols="10"
+                                rows="2"
+                                name="thursday"
+                                onBlur={e => handleBlur(e)}
+                                onChange={e => handleChange(e, activity.week)}
+                                value={activity.thursday}></Form.Control>
+                            </Form.Group>
+                          </td>
+                          <td className="pt-3-half">
+                            <Form.Group
+                              className="form-text-area"
+                              controlId="6">
+                              <Form.Control
+                                className="input-text-area"
+                                as="textarea"
+                                cols="10"
+                                rows="2"
+                                name="friday"
+                                onBlur={e => handleBlur(e)}
+                                onChange={e => handleChange(e, activity.week)}
+                                value={activity.friday}></Form.Control>
+                            </Form.Group>
+                          </td>
+                          <td className="pt-3-half">
+                            <Form.Group
+                              className="form-text-area"
+                              controlId="7">
+                              <Form.Control
+                                className="input-text-area"
+                                as="textarea"
+                                cols="10"
+                                rows="2"
+                                name="saturday"
+                                onBlur={e => handleBlur(e)}
+                                onChange={e => handleChange(e, activity.week)}
+                                value={activity.saturday}></Form.Control>
+                            </Form.Group>
+                          </td>
+                          <td>
+                            <span className="table-remove">
+                              <button
+                                type="button"
+                                className="btn btn-danger btn-rounded btn-sm my-0"
+                                onClick={() => removeRow(activity.week)}>
+                                Remove
+                              </button>
+                            </span>
+                          </td>
+                        </tr>
+                      ))
+                    : null}
                   {/* This is our clonable table line */}
                 </tbody>
               </table>

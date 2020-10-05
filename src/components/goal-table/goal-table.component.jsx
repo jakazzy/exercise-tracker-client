@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa'
 import { v4 as uuidv4 } from 'uuid'
+import { updateGoal } from '../../api/api'
+import { AuthContext } from '../../contexts/AuthContext'
 
 import './goal-table.styles.css'
 
 const GoalTable = () => {
+  const { goal } = useContext(AuthContext)
   const [goals, setGoals] = useState([
     {
       id: 1,
@@ -14,6 +17,15 @@ const GoalTable = () => {
       duration: 'three'
     }
   ])
+
+  useEffect(() => {
+    const goalData = () => {
+      if (goal && goal.length > goals.length) {
+        setGoals(goal)
+      }
+    }
+    goalData()
+  }, [goal, goals])
 
   const addNewGoalRow = () => {
     const newGoal = [
@@ -28,9 +40,10 @@ const GoalTable = () => {
     setGoals([...goals, ...newGoal])
   }
 
-  const removeNewGoalRow = id => {
+  const removeNewGoalRow = async id => {
     const filteredGoalTable = goals.filter(goal => goal.id !== id)
     setGoals([...filteredGoalTable])
+    await updateGoal(filteredGoalTable)
   }
 
   const handleChange = (e, id) => {
@@ -45,9 +58,12 @@ const GoalTable = () => {
 
     setGoals([...changeGoals])
   }
-  const handleBlur = () => {
+
+  const handleBlur = async () => {
+    await updateGoal(goals)
     console.log(goals)
   }
+
   return (
     <div style={{ margin: '3rem' }}>
       <Card>

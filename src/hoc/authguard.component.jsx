@@ -19,4 +19,5 @@ const AuthGuard = ({ component: Component, ...rest }) => {
     />
   )
 }
+
 export default AuthGuard

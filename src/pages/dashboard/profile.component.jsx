@@ -3,6 +3,7 @@ import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.
 import { Card } from 'react-bootstrap'
 import GymImage from '../../images/gymwoman.png'
 import ProfileForm from '../../components/profile-form/profile-form.component'
+
 const Profile = () => {
   return (
     <div style={{ width: '72rem', margin: '2rem auto' }}>
