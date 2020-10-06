@@ -1,0 +1,79 @@
+/* .curve-path {
+    width: 100vw;
+    height: 45rem;
+    background-color: green;
+} */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .curve-path {
+    /* clip-path: polygon(0 0, 100% 0%, 100% 19%, 29% 69%, 0% 50%); */
+    clip-path: polygon(0 0, 100% 0%, 100% 13%, 40% 72%, 0 37%);
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .curve-path {
+    /* clip-path: polygon(0 0, 100% 0%, 100% 19%, 29% 69%, 0% 50%); */
+    clip-path: polygon(0 0, 100% 0%, 100% 13%, 40% 72%, 0 37%);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .curve-path {
+    /* clip-path: polygon(0 0, 100% 0%, 100% 11%, 30% 59%, 0 26%); */
+    clip-path: polygon(0 0, 100% 0%, 100% 13%, 33% 84%, 0 37%);
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
+
+@media only screen and (max-width: 450px) {
+  .call-to-action-message {
+    width: 23rem;
+    margin: 3rem auto;
+    padding: 1rem;
+  }
+
+  section.info-card {
+    /* display: inline-flex; */
+    width: 17rem;
+    margin: 2rem auto;
+    /* justify-content: space-between; */
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .call-to-action-message {
+    width: 35rem;
+    margin: 6rem auto;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 620px) and (max-width: 900px) {
+  .section-info {
+    width: 10rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .call-to-action-message {
+    width: 40rem;
+    margin: 6rem auto;
+    padding: 1rem;
+  }
+
+  section.info-card {
+    display: inline-flex;
+    width: 59rem;
+    margin: 6rem auto;
+    justify-content: space-between;
+  }
+}
