@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/homeland" component={Home} />
         <Route exact path="/signup" component={SignupPage} />
         <Route exact path="/login" component={SigninPage} />
         <Route exact path="/resend-token" component={ResendToken} />
