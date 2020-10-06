@@ -20,8 +20,10 @@ const AuthContextProvider = props => {
       const { data } = await getScheduleAndGoal()
       console.log(data, 'isee schedule and goal')
       setAuth({ ...status.data })
-      setSchedule(data.schedule)
-      setGoal(data.goal)
+      if (data) {
+        setSchedule(data.schedule)
+        setGoal(data.goal)
+      }
       // return status.data
     }
     userData()
