@@ -4,6 +4,7 @@ import { RiDashboardLine } from 'react-icons/ri'
 import { AiOutlineSchedule, AiFillWechat } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { FaUserFriends } from 'react-icons/fa'
+import { BiNotepad } from 'react-icons/bi'
 
 import Settings from './settings.component'
 // import InviteFriend from './invite-friend.component.jsx'
@@ -13,6 +14,7 @@ import Main from './main.component'
 import InviteModal from '../../components/modal/modal.component'
 
 import './dashboard.styles.css'
+import Report from './report.component'
 
 const Sidebar = () => {
   const [show, setShow] = useState(false)
@@ -45,6 +47,10 @@ const Sidebar = () => {
                 <AiFillWechat />
                 Settings
               </ListGroup.Item>
+              <ListGroup.Item action href="#link5">
+                <BiNotepad />
+                Workout Log
+              </ListGroup.Item>
               <ListGroup.Item onClick={handleShow}>
                 <FaUserFriends />
                 Invite Friends
@@ -66,9 +72,9 @@ const Sidebar = () => {
               <Tab.Pane eventKey="#link4">
                 <Settings />
               </Tab.Pane>
-              {/* <Tab.Pane eventKey="#link5">
-                <InviteFriend />
-              </Tab.Pane> */}
+              <Tab.Pane eventKey="#link5">
+                <Report />
+              </Tab.Pane>
             </Tab.Content>
           </Col>
           {/* <Col className="person-detail" lg={3}>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react'
-import { checkStatus, getScheduleAndGoal } from '../api/api'
+import { checkStatus, getScheduleAndGoal, getUsersExercises } from '../api/api'
 
 export const AuthContext = createContext()
 const AuthContextProvider = props => {
@@ -37,26 +37,17 @@ const AuthContextProvider = props => {
     const userData = async () => {
       const status = await checkStatus()
       const { data } = await getScheduleAndGoal()
+      const exerciseData = await getUsersExercises()
+
       console.log(data, 'isee schedule and goal')
       setAuth({ ...status.data })
       if (data) {
         setSchedule(data.schedule)
         setGoal(data.goal)
-        setChartData([
-          { label: 'Sunday', value: '20' },
-          { label: 'Monday', value: '60' },
-          { label: 'Tuesday', value: '100' },
-          { label: 'Wednesday', value: '80' },
-          { label: 'Thursday', value: '35' },
-          { label: 'Friday', value: '15' },
-          { label: 'Saturday', value: '85' }
-        ])
-        setProgressData({
-          distance: 40,
-          skipping: 20,
-          calories: 60,
-          diet: 80
-        })
+      }
+      if (exerciseData.data) {
+        setChartData(exerciseData.chartData)
+        setProgressData(exerciseData.data.progressData)
       }
       // return status.data
     }
