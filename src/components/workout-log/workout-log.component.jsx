@@ -5,6 +5,7 @@ import { FaPlus } from 'react-icons/fa'
 const Workout = () => {
   const [exercises, setExercises] = useState([
     {
+      id: 1,
       name: 'running',
       sunday: 20,
       monday: 30,
@@ -16,6 +17,7 @@ const Workout = () => {
       metric: 'metres'
     },
     {
+      id: 2,
       name: 'skipping',
       sunday: 20,
       monday: 30,
@@ -27,6 +29,7 @@ const Workout = () => {
       metric: 'reps'
     },
     {
+      id: 3,
       name: 'abs',
       sunday: 20,
       monday: 30,
@@ -38,6 +41,7 @@ const Workout = () => {
       metric: 'reps'
     },
     {
+      id: 4,
       name: 'running',
       sunday: 20,
       monday: 30,
@@ -49,6 +53,7 @@ const Workout = () => {
       metric: 'metres'
     },
     {
+      id: 5,
       name: 'skipping',
       sunday: 20,
       monday: 30,
@@ -60,6 +65,7 @@ const Workout = () => {
       metric: 'reps'
     },
     {
+      id: 6,
       name: 'abs',
       sunday: 20,
       monday: 30,
@@ -72,8 +78,17 @@ const Workout = () => {
     }
   ])
 
-  const handleChange = () => {
-    setExercises({ a: 3 })
+  const handleChange = (e, id) => {
+    let newExercise = exercises.filter(exercise => exercise.id === id)[0]
+    newExercise = { ...newExercise, [e.target.name]: e.target.value }
+
+    const changeExercises = exercises.map(exercise => {
+      if (exercise.id === id) {
+        return { ...exercise, ...newExercise }
+      }
+      return exercise
+    })
+    setExercises([...changeExercises])
   }
   return (
     <div>
@@ -131,7 +146,7 @@ const Workout = () => {
                             rows="2"
                             name="sunday"
                             //   onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, exercises.name)}
+                            onChange={e => handleChange(e, exercise.id)}
                             value={exercise.sunday}></Form.Control>
                         </Form.Group>
                       </td>
@@ -142,7 +157,7 @@ const Workout = () => {
                             as="textarea"
                             name="monday"
                             //   onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, exercises.name)}
+                            onChange={e => handleChange(e, exercise.id)}
                             cols="10"
                             rows="2"
                             value={exercise.monday}></Form.Control>
@@ -157,7 +172,7 @@ const Workout = () => {
                             rows="2"
                             name="tuesday"
                             //   onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, exercises.name)}
+                            onChange={e => handleChange(e, exercise.id)}
                             value={exercise.tuesday}></Form.Control>
                         </Form.Group>
                       </td>
@@ -170,7 +185,7 @@ const Workout = () => {
                             rows="2"
                             name="wednesday"
                             //   onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, exercises.name)}
+                            onChange={e => handleChange(e, exercise.id)}
                             value={exercise.wednesday}></Form.Control>
                         </Form.Group>
                       </td>
@@ -183,7 +198,7 @@ const Workout = () => {
                             rows="2"
                             name="thursday"
                             //   onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, exercises.name)}
+                            onChange={e => handleChange(e, exercise.id)}
                             value={exercise.thursday}></Form.Control>
                         </Form.Group>
                       </td>
@@ -196,7 +211,7 @@ const Workout = () => {
                             rows="2"
                             name="friday"
                             //   onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, exercises.name)}
+                            onChange={e => handleChange(e, exercise.id)}
                             value={exercise.friday}></Form.Control>
                         </Form.Group>
                       </td>
@@ -209,7 +224,7 @@ const Workout = () => {
                             rows="2"
                             name="saturday"
                             //   onBlur={e => handleBlur(e)}
-                            onChange={e => handleChange(e, exercises.name)}
+                            onChange={e => handleChange(e, exercise.id)}
                             value={exercise.saturday}></Form.Control>
                         </Form.Group>
                       </td>
