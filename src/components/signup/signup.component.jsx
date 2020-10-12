@@ -11,14 +11,13 @@ import {
   GoogleButton
 } from '../oauth-buttons/oauth-buttons.component'
 import { createNewUser } from '../../api/api'
-import './signup.styles.css'
+import '../../assets/auth-styles.css'
 
 const Signup = () => {
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = async data => {
     try {
-      console.log(data, 'input data')
       const resp = await createNewUser(data)
       toast(resp.data.message, { type: 'info' })
     } catch (error) {
@@ -29,13 +28,16 @@ const Signup = () => {
 
   return (
     <Card
-      style={{
-        width: '26rem',
-        height: '35rem',
-        position: 'absolute',
-        right: '35rem',
-        top: '14rem'
-      }}>
+      className="auth-card"
+      style={
+        {
+          // width: '26rem',
+          // height: '35rem',
+          // position: 'absolute',
+          // right: '35rem',
+          // top: '14rem'
+        }
+      }>
       <Card.Body>
         <Card.Title>Create An Account</Card.Title>
         <Container>

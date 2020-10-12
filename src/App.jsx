@@ -10,24 +10,26 @@ import ResetPassword from './pages/reset-password/reset-password.component'
 import ConfirmPassword from './pages/confirm-password/confirm-password.component'
 import LandingPage from './pages/landing-page/LandingPage.component'
 import AuthGuard from './hoc/authguard.component'
+import AuthContextProvider from './contexts/AuthContext'
+import Home from './pages/home/home.components'
 
 import './App.css'
-import AuthContextProvider from './contexts/AuthContext'
 
 function App() {
   return (
     <div className="App">
       <Switch>
+        <Route exact path="/homeland" component={Home} />
         <Route exact path="/signup" component={SignupPage} />
         <Route exact path="/login" component={SigninPage} />
-        <AuthContextProvider>
-          <AuthGuard exact path="/dashboard" component={Dashboard} />
-        </AuthContextProvider>
         <Route exact path="/resend-token" component={ResendToken} />
         <Route exact path="/confirmation" component={Confirmation} />
         <Route exact path="/reset-password" component={ResetPassword} />
         <Route exact path="/confirm-password" component={ConfirmPassword} />
         <Route exact path="/landingpage" component={LandingPage} />
+        <AuthContextProvider>
+          <AuthGuard exact path="/dashboard" component={Dashboard} />
+        </AuthContextProvider>
       </Switch>
     </div>
   )

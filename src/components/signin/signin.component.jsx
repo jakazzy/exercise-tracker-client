@@ -12,7 +12,7 @@ import {
   GoogleButton
 } from '../../components/oauth-buttons/oauth-buttons.component'
 import { loginUser } from '../../api/api'
-import './signin.styles.css'
+import '../../assets/auth-styles.css'
 
 const Signin = () => {
   const history = useHistory()
@@ -33,14 +33,7 @@ const Signin = () => {
   }
 
   return (
-    <Card
-      style={{
-        width: '26rem',
-        height: '30rem',
-        position: 'absolute',
-        right: '35rem',
-        top: '14rem'
-      }}>
+    <Card className="auth-card">
       <Card.Body>
         <Card.Title>Welcome back</Card.Title>
         <Container>

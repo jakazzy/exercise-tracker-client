@@ -11,6 +11,7 @@ import Footer from '../../components/footer/footer'
 import AuthContextProvider from '../../contexts/AuthContext'
 
 const LandingPage = () => {
+  console.log('Do you render? ')
   return (
     <div style={{ overflowX: 'hidden' }}>
       <AuthContextProvider>

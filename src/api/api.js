@@ -185,3 +185,45 @@ export const getScheduleAndGoal = async () => {
     return error
   }
 }
+
+// EXERCISES
+export const getUsersExercises = async () => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `${process.env.REACT_APP_BASE_URL}/users/user/exercises`
+    })
+    return result
+  } catch (error) {
+    console.log(error)
+    return error
+  }
+}
+
+export const createExercises = async () => {
+  try {
+    console.log('create new exercises')
+    const result = await axios({
+      method: 'post',
+      url: `${process.env.REACT_APP_BASE_URL}/users/user/exercises`
+    })
+    return result
+  } catch (error) {
+    console.log(error)
+    return error
+  }
+}
+export const updateUsersExercises = async data => {
+  try {
+    const result = await axios({
+      method: 'put',
+      url: `${process.env.REACT_APP_BASE_URL}/users/user/exercises/weeklylog`,
+      data
+    })
+    console.log('updateusersexercises', result)
+    return result
+  } catch (error) {
+    console.log(error)
+    return error
+  }
+}

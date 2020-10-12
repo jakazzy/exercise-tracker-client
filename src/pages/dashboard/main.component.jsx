@@ -8,6 +8,7 @@ import Chart from './chart.component'
 
 import './main.styles.css'
 import ExerciseProgress from './exercise-progress.component'
+import AuthContextProvider from '../../contexts/AuthContext'
 
 const Main = () => {
   return (
@@ -79,12 +80,16 @@ const Main = () => {
         <Card.Body as={Row} className="graphs">
           <Col sm={9}>
             <div className="first-graph">
-              <Chart />
+              <AuthContextProvider>
+                <Chart />
+              </AuthContextProvider>
             </div>
           </Col>
           <Col sm={3} className="shadow">
             <div className="second-graph">
-              <ExerciseProgress />
+              <AuthContextProvider>
+                <ExerciseProgress />
+              </AuthContextProvider>
             </div>
           </Col>
         </Card.Body>

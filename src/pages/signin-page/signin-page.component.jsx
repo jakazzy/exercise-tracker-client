@@ -1,13 +1,12 @@
 import React from 'react'
 import Signin from '../../components/signin/signin.component'
-import './signin-page.styles.css'
+import Layout from '../../components/layout/layout.component'
 
 function SigninPage() {
   return (
-    <div className="container-box">
-      <div className="divider"></div>
+    <Layout>
       <Signin />
-    </div>
+    </Layout>
   )
 }
 
