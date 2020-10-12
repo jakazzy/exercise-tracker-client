@@ -46,8 +46,10 @@ const AuthContextProvider = props => {
         setGoal(data.goal)
       }
       if (exerciseData.data) {
-        setChartData(exerciseData.chartData)
         setProgressData(exerciseData.data.progressData)
+      }
+      if (exerciseData.data) {
+        setChartData(exerciseData.chartData)
       }
       // return status.data
     }
@@ -55,7 +57,13 @@ const AuthContextProvider = props => {
   }, [])
   return (
     <AuthContext.Provider
-      value={{ auth, goal, schedule, chartData, progressData }}>
+      value={{
+        auth,
+        goal,
+        schedule,
+        chartData,
+        progressData
+      }}>
       {props.children}
     </AuthContext.Provider>
   )

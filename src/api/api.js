@@ -200,10 +200,11 @@ export const getUsersExercises = async () => {
   }
 }
 
-export const updateUsersExercises = async () => {
+export const createExercises = async () => {
   try {
+    console.log('create new exercises')
     const result = await axios({
-      method: 'put',
+      method: 'post',
       url: `${process.env.REACT_APP_BASE_URL}/users/user/exercises`
     })
     return result
@@ -212,13 +213,14 @@ export const updateUsersExercises = async () => {
     return error
   }
 }
-
-export const createUsersExercises = async () => {
+export const updateUsersExercises = async data => {
   try {
     const result = await axios({
-      method: 'post',
-      url: `${process.env.REACT_APP_BASE_URL}/users/user/exercises`
+      method: 'put',
+      url: `${process.env.REACT_APP_BASE_URL}/users/user/exercises/weeklylog`,
+      data
     })
+    console.log('updateusersexercises', result)
     return result
   } catch (error) {
     console.log(error)

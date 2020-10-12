@@ -20,6 +20,7 @@ const Signup = () => {
     try {
       console.log(data, 'input data')
       const resp = await createNewUser(data)
+
       toast(resp.data.message, { type: 'info' })
     } catch (error) {
       console.log(error.message)

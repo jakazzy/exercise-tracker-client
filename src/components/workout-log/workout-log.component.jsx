@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Form, Container, Row, Col } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa'
+import { updateUsersExercises } from '../../api/api'
 
 const Workout = () => {
   const [exercises, setExercises] = useState([
@@ -90,6 +91,11 @@ const Workout = () => {
     })
     setExercises([...changeExercises])
   }
+
+  const handleBlur = () => {
+    console.log(exercises, 'heloooooooooooooo')
+    updateUsersExercises(exercises)
+  }
   return (
     <div>
       <Card>
@@ -145,7 +151,7 @@ const Workout = () => {
                             cols="10"
                             rows="2"
                             name="sunday"
-                            //   onBlur={e => handleBlur(e)}
+                            onBlur={e => handleBlur(e)}
                             onChange={e => handleChange(e, exercise.id)}
                             value={exercise.sunday}></Form.Control>
                         </Form.Group>
