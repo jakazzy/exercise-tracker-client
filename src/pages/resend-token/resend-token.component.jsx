@@ -16,9 +16,8 @@ const ResendToken = () => {
         style={{
           width: '20rem',
           height: '20rem',
-          position: 'absolute',
-          right: '40rem',
-          top: '14rem'
+          top: '14rem',
+          margin: '0 auto'
         }}>
         <Card.Body>
           <Container>
