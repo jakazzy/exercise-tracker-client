@@ -1,4 +1,11 @@
-.login-or {
+/* .auth-card{
+  width: 26rem;
+  height: 35rem;
+  position: absolute;
+  right: 35rem;
+  top: 14rem
+} */
+/* .login-or {
   font-size: 0.9rem;
   color: #aaa;
   position: relative;
@@ -22,15 +29,15 @@
   background-color: #fff;
   top: 1px;
   left: 156px;
-}
+} */
 
-.social-icons {
-  /* width: 7.5rem;
+/* .social-icons {
+  width: 7.5rem;
   margin: 1rem auto;
   display: flex;
   font-size: 2rem;
-  justify-content: space-between; */
-}
+  justify-content: space-between;
+} */
 .google-button {
   margin-top: 1rem;
 }
@@ -55,9 +62,9 @@
 .links-form {
   margin-bottom: 1.5rem !important;
 }
-.btn-bg-color {
+/* .btn-bg-color {
   background-color: #ff365e !important;
   border: #ff365e !important;
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
-}
+} */

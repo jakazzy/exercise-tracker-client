@@ -1,7 +1,7 @@
 .container-box {
   position: relative;
   overflow: hidden;
-  height: 61rem;
+  height: 100vh;
   background-color: rgb(82, 185, 192);
 }
 
@@ -13,4 +13,27 @@
   height: 61rem;
   border-radius: 94% 0px 0px 0%;
   background-color: #fff;
+}
+
+.auth-card {
+  width: 26rem;
+  height: 34rem;
+  position: relative;
+  right: 0;
+  top: 8rem;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 600px) {
+  .card-title {
+    margin-bottom: 0.3rem !important;
+  }
+  .links-form {
+    margin-bottom: 0.3rem !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .auth-card {
+    width: 21rem;
+  }
 }
