@@ -1,0 +1,26 @@
+.card-groups {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 560px) {
+  .card-groups {
+    display: block;
+  }
+
+  .profile-update {
+    margin: 1rem;
+    width: 33rem;
+  }
+  .profile-detail {
+    margin: 1rem 4rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .profile-update {
+    width: 22rem;
+  }
+  .profile-detail {
+    width: 17rem;
+  }
+}
