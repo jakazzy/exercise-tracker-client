@@ -1,0 +1,31 @@
+.menu-icon {
+  display: none;
+}
+
+.header-row {
+  height: 5rem;
+  width: 60rem;
+  margin: 2rem auto;
+}
+@media only screen and (max-width: 800px) {
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .dashboard-nav-item {
+    display: none;
+  }
+
+  .dashboard-text {
+    display: inline-block;
+  }
+  .header-row {
+    height: 1rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .menu-icon {
+    display: none;
+  }
+}

@@ -11,14 +11,14 @@ const ExerciseProgress = () => {
   }, [progressData])
   return (
     <div>
-      <p>Running</p>
-      <ProgressBar animated variant="success" now={data.running} />
-      <p>Skipping</p>
-      <ProgressBar animated variant="info" now={data.skipping} />
+      <p>Run</p>
+      <ProgressBar animated variant="success" now={data.current.running} />
+      <p>Skip</p>
+      <ProgressBar animated variant="info" now={data.current.skipping} />
       <p>Calorie</p>
-      <ProgressBar animated variant="warning" now={data.calorie} />
+      <ProgressBar animated variant="warning" now={data.current.calorie} />
       <p>Diet</p>
-      <ProgressBar animated variant="danger" now={data.diet} />
+      <ProgressBar animated variant="danger" now={data.current.diet} />
     </div>
   )
 }

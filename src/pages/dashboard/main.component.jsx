@@ -37,9 +37,10 @@ const Main = () => {
             src={Training}
             alt="Exercise"
             loading="lazy"
-            width="250"
-            height="250"
-            style={{ position: 'absolute', top: '-6rem' }}
+            // width="250"
+            // height="250"
+            className="training-image"
+            // style={{ position: 'absolute', top: '-6rem' }}
           />
         </Card.Body>
       </Card>
@@ -76,16 +77,16 @@ const Main = () => {
           </div>
         </Card.Body>
       </Card>
-      <Card className="shadow border-0 card-section">
+      <Card className="shadow border-0 card-section graphs-section">
         <Card.Body as={Row} className="graphs">
-          <Col sm={9}>
+          <Col xs={9} md={9}>
             <div className="first-graph">
               <AuthContextProvider>
                 <Chart />
               </AuthContextProvider>
             </div>
           </Col>
-          <Col sm={3} className="shadow">
+          <Col xs={3} md={3} className="shadow">
             <div className="second-graph">
               <AuthContextProvider>
                 <ExerciseProgress />

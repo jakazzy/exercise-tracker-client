@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { ListGroup, Tab, Row, Col } from 'react-bootstrap'
 import { RiDashboardLine } from 'react-icons/ri'
 import { AiOutlineSchedule, AiFillWechat } from 'react-icons/ai'
@@ -12,20 +12,21 @@ import Profile from './profile.component'
 import Schedule from './schedule.component'
 import Main from './main.component'
 import InviteModal from '../../components/modal/modal.component'
+import Report from './report.component'
+import { AuthContext } from '../../contexts/AuthContext'
 
 import './dashboard.styles.css'
-import Report from './report.component'
 
 const Sidebar = () => {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-
+  const { navState } = useContext(AuthContext)
   return (
     <div className="sidebar">
       <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
         <Row>
-          <Col sm={3} lg={2}>
+          <Col sm={3} lg={2} className={navState ? 'show-nav' : 'hide-nav'}>
             <ListGroup
               style={{
                 height: '100vh'
@@ -58,7 +59,7 @@ const Sidebar = () => {
             </ListGroup>
             <InviteModal show={show} handleClose={handleClose} />
           </Col>
-          <Col sm={8} lg={9}>
+          <Col sm={4} lg={9}>
             <Tab.Content>
               <Tab.Pane eventKey="#link1">
                 <Main />
