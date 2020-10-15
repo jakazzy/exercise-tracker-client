@@ -101,3 +101,10 @@ svg {
     display: block;
   }
 }
+
+@media only screen and (max-width: 560px) {
+  .schedule-page {
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+}

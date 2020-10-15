@@ -64,7 +64,7 @@ const Sidebar = () => {
               <Tab.Pane eventKey="#link1">
                 <Main />
               </Tab.Pane>
-              <Tab.Pane eventKey="#link2">
+              <Tab.Pane className="schedule-page" eventKey="#link2">
                 <Schedule />
               </Tab.Pane>
               <Tab.Pane eventKey="#link3">
