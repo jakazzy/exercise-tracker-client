@@ -96,6 +96,12 @@ svg {
 .hide-nav {
   display: none;
 }
+
+@media only screen and (min-width: 570px) and (max-width: 1050px) {
+  .report-page {
+    width: 40rem;
+  }
+}
 @media only screen and (min-width: 800px) {
   .hide-nav {
     display: block;

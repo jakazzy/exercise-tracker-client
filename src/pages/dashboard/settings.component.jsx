@@ -29,12 +29,12 @@ const Settings = () => {
   }, [notify, mode])
 
   return (
-    <div style={{ width: '60rem', margin: '2rem auto' }}>
+    <div className="settings-page">
       <DashboardNavbar page="settings" />
       <Card>
         <Card.Header>Settings page</Card.Header>
         <Card.Body>
-          <Form style={{ width: '30rem', margin: '0 auto' }}>
+          <Form className="settings-form">
             <Form.Group style={{ marginBottom: '3rem' }}>
               <Form.Label> Linked Accounts</Form.Label>
               <FacebookButton text="Connect Facebook" route="auth" />

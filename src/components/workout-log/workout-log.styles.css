@@ -1,0 +1,20 @@
+/* @media only screen and (min-width: 800px){
+   .workout-page{  
+       width: 100vw;
+       overflow-x: auto;
+} 
+} */
+@media only screen and (min-width: 570px) and (max-width: 1050px) {
+  .workout-page {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  /* .report-page{
+        width: 40rem;
+    } */
+
+  .table-card {
+    width: 73rem;
+  }
+}

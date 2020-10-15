@@ -73,7 +73,7 @@ const Sidebar = () => {
               <Tab.Pane eventKey="#link4">
                 <Settings />
               </Tab.Pane>
-              <Tab.Pane eventKey="#link5">
+              <Tab.Pane className="report-page" eventKey="#link5">
                 <Report />
               </Tab.Pane>
             </Tab.Content>
