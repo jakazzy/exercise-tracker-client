@@ -1,0 +1,18 @@
+.top {
+  height: 50%;
+  width: 100vw;
+  visibility: hidden;
+  /* position: absolute; */
+}
+
+.intro-overlay {
+  position: absolute;
+  background-color: #9ef9ff;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+  /* bottom: 0; */
+  top: 0;
+  /* z-index: 1; */
+}

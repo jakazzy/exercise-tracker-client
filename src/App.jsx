@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <Switch>
         <AuthContextProvider>
-          <Route exact path="/homeland" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={SignupPage} />
           <Route exact path="/login" component={SigninPage} />
           <Route exact path="/resend-token" component={ResendToken} />
