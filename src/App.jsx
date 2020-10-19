@@ -14,20 +14,21 @@ import AuthContextProvider from './contexts/AuthContext'
 import Home from './pages/home/home.components'
 
 import './App.css'
+// import DashboardNavbar from './components/dashboard-navbar/dashboard-navbar.component'
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/homeland" component={Home} />
-        <Route exact path="/signup" component={SignupPage} />
-        <Route exact path="/login" component={SigninPage} />
-        <Route exact path="/resend-token" component={ResendToken} />
-        <Route exact path="/confirmation" component={Confirmation} />
-        <Route exact path="/reset-password" component={ResetPassword} />
-        <Route exact path="/confirm-password" component={ConfirmPassword} />
-        <Route exact path="/landingpage" component={LandingPage} />
         <AuthContextProvider>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/signup" component={SignupPage} />
+          <Route exact path="/login" component={SigninPage} />
+          <Route exact path="/resend-token" component={ResendToken} />
+          <Route exact path="/confirmation" component={Confirmation} />
+          <Route exact path="/reset-password" component={ResetPassword} />
+          <Route exact path="/confirm-password" component={ConfirmPassword} />
+          <Route exact path="/landingpage" component={LandingPage} />
           <AuthGuard exact path="/dashboard" component={Dashboard} />
         </AuthContextProvider>
       </Switch>

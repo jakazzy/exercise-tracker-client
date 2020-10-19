@@ -10,6 +10,7 @@ const AuthGuard = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={props =>
+        // true
         isAuthenticated && token ? (
           <Component {...props} />
         ) : (

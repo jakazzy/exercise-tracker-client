@@ -3,6 +3,8 @@ import { Card, Form, Container, Row, Col } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa'
 import { updateUsersExercises } from '../../api/api'
 
+import './workout-log.styles.css'
+
 const Workout = () => {
   const [exercises, setExercises] = useState([
     {
@@ -97,8 +99,8 @@ const Workout = () => {
     updateUsersExercises(exercises)
   }
   return (
-    <div>
-      <Card>
+    <div className="workout-page">
+      <Card className="table-card">
         <h3 className="card-header text-center font-weight-bold text-uppercase py-4">
           Workout Log
         </h3>

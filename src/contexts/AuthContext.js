@@ -33,6 +33,11 @@ const AuthContextProvider = props => {
     calories: 300
   })
 
+  const [navState, setNavState] = useState(false)
+
+  const toggleNavState = () => {
+    setNavState(!navState)
+  }
   useEffect(() => {
     const userData = async () => {
       const status = await checkStatus()
@@ -62,7 +67,9 @@ const AuthContextProvider = props => {
         goal,
         schedule,
         chartData,
-        progressData
+        progressData,
+        toggleNavState,
+        navState
       }}>
       {props.children}
     </AuthContext.Provider>

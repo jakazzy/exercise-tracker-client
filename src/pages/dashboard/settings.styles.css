@@ -1,0 +1,68 @@
+.settings-page {
+  width: 60rem;
+  margin: 2rem auto;
+}
+
+.settings-form {
+  width: 30rem;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .settings-page {
+    width: 55rem;
+  }
+}
+@media only screen and (min-width: 850px) {
+  .settings-page {
+    width: 49rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .settings-page {
+    width: 49rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .settings-page {
+    width: 38rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .settings-page {
+    width: 39rem;
+    margin: 2rem auto;
+  }
+
+  .settings-form {
+    width: 23rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .settings-page {
+    width: 30rem;
+    margin: 2rem auto;
+  }
+
+  .settings-form {
+    width: 20rem;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .settings-page {
+    width: 26rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .settings-page {
+    width: 23rem;
+    margin: 2rem auto;
+  }
+
+  .settings-form {
+    width: 20rem;
+    margin: 0 auto;
+  }
+}

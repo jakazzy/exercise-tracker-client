@@ -15,7 +15,7 @@
   margin: 2rem 0;
 }
 .first-graph {
-  width: 60%;
+  width: 100%;
 }
 
 .first-metric,
@@ -61,3 +61,87 @@
   font-size: 3rem;
   color: mistyrose;
 }
+
+.training-image {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: -6rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .training-image {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -3rem;
+    left: 237px;
+  }
+
+  .first-metric,
+  .second-metric,
+  .third-metric {
+    width: 20%;
+    margin: 0 2rem;
+  }
+
+  .metrics {
+    display: flex;
+    justify-content: normal;
+  }
+
+  .graphs {
+    width: 47rem;
+  }
+
+  .first-graph {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .first-metric,
+  .second-metric,
+  .third-metric {
+    width: 15%;
+    margin: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .metrics {
+    width: 100vw;
+    display: flex;
+  }
+
+  .first-metric,
+  .second-metric,
+  .third-metric {
+    width: 25%;
+  }
+
+  .first-graph,
+  .second-graph {
+    width: 100%;
+  }
+
+  /* .graphs{
+    display: block;
+  }
+
+  .graphs-section{
+    height: 30rem;
+  } */
+  /* .graphs-section{
+    width: 24rem !important;
+  } */
+  .graphs {
+    width: 24rem;
+  }
+}
+
+/* @media only screen and (min-width: 500px) and (max-width: 800px){
+  .graphs{
+    width: 47rem;
+  }
+} */

@@ -40,7 +40,9 @@
     margin: 3rem auto;
     padding: 1rem;
   }
-
+  .train-image img {
+    display: none;
+  }
   section.info-card {
     /* display: inline-flex; */
     width: 17rem;
@@ -55,11 +57,17 @@
     margin: 6rem auto;
     padding: 1rem;
   }
+  .train-image img {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 620px) and (max-width: 900px) {
   .section-info {
     width: 10rem;
+  }
+  .train-image img {
+    display: none;
   }
 }
 
@@ -69,11 +77,31 @@
     margin: 6rem auto;
     padding: 1rem;
   }
-
+  .train-image img {
+    display: block;
+  }
   section.info-card {
     display: inline-flex;
     width: 59rem;
     margin: 6rem auto;
     justify-content: space-between;
   }
+}
+
+.main-content {
+  visibility: hidden;
+}
+
+.wlcm-msg {
+  height: 50vh;
+  width: 100%;
+  padding-top: 7rem;
+  margin: 5rem auto;
+  /* position: absolute */
+}
+
+.wlcm-msg h4 {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 100;
+  opacity: 0.6;
 }

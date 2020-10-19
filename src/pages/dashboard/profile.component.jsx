@@ -4,14 +4,16 @@ import { Card } from 'react-bootstrap'
 import GymImage from '../../images/gymwoman.png'
 import ProfileForm from '../../components/profile-form/profile-form.component'
 
+import './profile.styles.css'
+
 const Profile = () => {
   return (
     <div style={{ width: '72rem', margin: '2rem auto' }}>
       <DashboardNavbar page="profile" />
-      <div
-        className="card-groups"
-        style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Card style={{ width: '27rem', height: '25rem', position: 'relative' }}>
+      <div className="card-groups">
+        <Card
+          className="profile-detail"
+          style={{ width: '27rem', height: '25rem', position: 'relative' }}>
           <Card.Img
             variant="top"
             src={GymImage}
@@ -58,7 +60,9 @@ const Profile = () => {
           </Card.Body>
         </Card>
 
-        <Card style={{ width: '40rem', height: '33rem' }}>
+        <Card
+          className="profile-update"
+          style={{ width: '40rem', height: '33rem' }}>
           <Card.Body>
             {/* <Card.Title>Card title</Card.Title>
             <Card.Text>

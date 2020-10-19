@@ -22,8 +22,8 @@ const Chart = () => {
 
   const chartConfigs = {
     type: 'column2d',
-    width: '700',
-    height: '350',
+    width: '100%',
+    height: '100%',
     dataFormat: 'json',
     dataSource: {
       chart: {
