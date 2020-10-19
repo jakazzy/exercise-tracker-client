@@ -74,7 +74,7 @@ const Home = () => {
         )
         .to(
           '.main-content',
-          { opacity: 1, ease: 'slow(0.7, 0.1, false)', duration: 1 },
+          { visibility: 'visible', ease: 'slow(0.7, 0.1, false)', duration: 1 },
           '-=0.5'
         )
       return tl
