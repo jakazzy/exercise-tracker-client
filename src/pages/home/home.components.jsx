@@ -6,7 +6,7 @@ import { cardData } from '../../data/data'
 import CardItem from '../../components/card/card.component'
 import './home.styles.css'
 import NavHome from '../../components/NavHome/navhome.component'
-import AuthContextProvider from '../../contexts/AuthContext'
+// import AuthContextProvider from '../../contexts/AuthContext'
 import IntroOverlay from '../../components/intro-overlay/introOverlay.component'
 
 import Train from '../../images/train.svg'
@@ -86,9 +86,9 @@ const Home = () => {
   }, [])
   return (
     <div style={{ position: 'relative' }}>
-      <AuthContextProvider>
+      {/* <AuthContextProvider> */}
         <NavHome />
-      </AuthContextProvider>
+      {/* </AuthContextProvider> */}
       <IntroOverlay />
       <div className="wlcm-msg">
         <h4>Let's make the goal a reality</h4>

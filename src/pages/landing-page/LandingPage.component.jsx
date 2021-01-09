@@ -14,9 +14,7 @@ const LandingPage = () => {
   console.log('Do you render? ')
   return (
     <div style={{ overflowX: 'hidden' }}>
-      <AuthContextProvider>
         <HomeNavbar />
-      </AuthContextProvider>
       <section className="welcome-message">
         <div className="CTA-message">
           <h1> MAKE IT HAPPEN. SHOCK EVERYONE</h1>

@@ -32,7 +32,7 @@ const NavHome = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          {!token && !isAuthenticated ? (
+          {true ? (
             <span>
               <Nav.Link href="/login" className="auth-link">
                 Sign in

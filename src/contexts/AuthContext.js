@@ -2,13 +2,13 @@ import React, { useState, useEffect, createContext } from 'react'
 import { checkStatus, getScheduleAndGoal, getUsersExercises } from '../api/api'
 
 export const AuthContext = createContext()
+
 const AuthContextProvider = props => {
   const [auth, setAuth] = useState({
     isAuthenticated: true,
     message: '',
     user: '',
-    token:
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjAxMDMwNjM3LCJleHAiOjE2MDExMTcwMzd9.zqx9qxyptAa0gIO4jlnsi3LxRzifYvckuaShJ1ZrDFM'
+    token: process.env.REACT_APP_TOKEN
   })
 
   const [schedule, setSchedule] = useState([])
@@ -50,10 +50,10 @@ const AuthContextProvider = props => {
         setSchedule(data.schedule)
         setGoal(data.goal)
       }
-      if (exerciseData.data) {
+      if (exerciseData.data && exerciseData.data.progressData) {
         setProgressData(exerciseData.data.progressData)
       }
-      if (exerciseData.data) {
+      if (exerciseData.data && exerciseData.data.chartData) {
         setChartData(exerciseData.chartData)
       }
       // return status.data
