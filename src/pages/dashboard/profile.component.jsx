@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
 import { Card } from 'react-bootstrap'
 import GymImage from '../../images/gymwoman.png'
 import ProfileForm from '../../components/profile-form/profile-form.component'
+import { AuthContext } from '../../contexts/AuthContext'
 
 import './profile.styles.css'
 
 const Profile = () => {
+  const {
+    auth: { user }
+  } = useContext(AuthContext)
   return (
     <div style={{ width: '72rem', margin: '2rem auto' }}>
       <DashboardNavbar page="profile" />
@@ -34,7 +38,9 @@ const Profile = () => {
             }}
           />
           <Card.Body>
-            <Card.Title style={{ marginTop: '2rem' }}>Abena Flames</Card.Title>
+            <Card.Title style={{ marginTop: '2rem' }}>
+              {user.username}
+            </Card.Title>
             <Card.Text>
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit

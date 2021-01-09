@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Card, Row, Col } from 'react-bootstrap'
 import Training from '../../images/personal_training.svg'
 import DashboardNavbar from '../../components/dashboard-navbar/dashboard-navbar.component'
@@ -8,9 +8,13 @@ import Chart from './chart.component'
 
 import './main.styles.css'
 import ExerciseProgress from './exercise-progress.component'
-import AuthContextProvider from '../../contexts/AuthContext'
+import { AuthContext } from '../../contexts/AuthContext'
 
 const Main = () => {
+  const {
+    auth: { user }
+  } = useContext(AuthContext)
+
   return (
     <div style={{ width: '60rem', margin: '2rem auto' }}>
       <DashboardNavbar page="main" />
@@ -29,7 +33,7 @@ const Main = () => {
             }}>
             {' '}
             <p>
-              <b>Hello Musa,</b>{' '}
+              <b>Hello {user.username} ,</b>{' '}
             </p>
             <p>Today is a great day to be fit</p>
           </div>
@@ -81,16 +85,12 @@ const Main = () => {
         <Card.Body as={Row} className="graphs">
           <Col xs={9} md={9}>
             <div className="first-graph">
-              <AuthContextProvider>
-                <Chart />
-              </AuthContextProvider>
+              <Chart />
             </div>
           </Col>
           <Col xs={3} md={3} className="shadow">
             <div className="second-graph">
-              <AuthContextProvider>
-                <ExerciseProgress />
-              </AuthContextProvider>
+              <ExerciseProgress />
             </div>
           </Col>
         </Card.Body>

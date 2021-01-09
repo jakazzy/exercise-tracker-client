@@ -1,10 +1,9 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container, Button, Card, Form } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { ToastContainer, toast } from 'react-toastify'
+import { yupResolver } from '@hookform/resolvers'
+import * as Yup from 'yup'
 
 import {
   FacebookButton,
@@ -14,7 +13,17 @@ import { createNewUser } from '../../api/api'
 import '../../assets/auth-styles.css'
 
 const Signup = () => {
-  const { register, handleSubmit, errors } = useForm()
+  const schema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    phonenumber: Yup.string(),
+    password: Yup.string()
+      .min(8, 'Password should be longer than 8 characters')
+      .required('Password is required')
+  })
+  const { register, handleSubmit, errors } = useForm({
+    mode: 'onBlur',
+    resolver: yupResolver(schema)
+  })
 
   const onSubmit = async data => {
     try {
@@ -27,17 +36,7 @@ const Signup = () => {
   }
 
   return (
-    <Card
-      className="auth-card"
-      style={
-        {
-          // width: '26rem',
-          // height: '35rem',
-          // position: 'absolute',
-          // right: '35rem',
-          // top: '14rem'
-        }
-      }>
+    <Card className="auth-card">
       <Card.Body>
         <Card.Title>Create An Account</Card.Title>
         <Container>
@@ -48,13 +47,7 @@ const Signup = () => {
                   type="email"
                   name="email"
                   placeholder="Enter email address"
-                  ref={register({
-                    required: 'Email is required',
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'invalid email address'
-                    }
-                  })}></Form.Control>
+                  ref={register}></Form.Control>
                 {errors.email && (
                   <p className="error-message">{errors.email.message}</p>
                 )}
@@ -66,15 +59,12 @@ const Signup = () => {
                   type="tel"
                   placeholder="Enter telephone number"
                   name="phonenumber"
-                  ref={register({
-                    required: 'Phonenumber is required'
-                  })}></Form.Control>
+                  ref={register}></Form.Control>
                 {errors.phonenumber && (
                   <p className="error-message">{errors.phonenumber.message}</p>
                 )}
               </Col>
             </Form.Group>
-
             <Form.Group as={Row} controlId="password">
               <Col>
                 <Form.Control
@@ -114,23 +104,12 @@ const Signup = () => {
               {' '}
               Sign up
             </Button>
-
             <div className="login-or">
               <span className="span-or">OR</span>
               <hr className="hr-or" />
             </div>
             <Form.Text className="text-muted">Login / Sign up with</Form.Text>
             <div className="social-icons">
-              {/* <FacebookLogin
-                appId={FACEBOOK.clientId}
-                fields="name,email,picture"
-                callback={responseFacebook}
-                cssClass="btn btn-primary social-button"
-                icon={
-                  <i className="fa fa-facebook-square" aria-hidden="true"></i>
-                }
-                textButton="&nbsp;&nbsp;Sign In with Facebook"
-              /> */}
               <FacebookButton text="Sign in with Facebook" route="auth" />
               <GoogleButton text="Sign in with Google" route="auth" />
             </div>

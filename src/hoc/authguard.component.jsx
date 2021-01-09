@@ -6,6 +6,7 @@ const AuthGuard = ({ component: Component, ...rest }) => {
   const {
     auth: { isAuthenticated, token }
   } = useContext(AuthContext)
+  console.log(isAuthenticated, token, '^^^^^^^^^^^^^^^^^^^^^^^^^^')
   return (
     <Route
       {...rest}

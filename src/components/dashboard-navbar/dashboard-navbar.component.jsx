@@ -8,7 +8,10 @@ import { AuthContext } from '../../contexts/AuthContext'
 import './dashboard-navbar.styles.css'
 
 const DashboardNavbar = ({ page }) => {
-  const { toggleNavState } = useContext(AuthContext)
+  const {
+    auth: { user },
+    toggleNavState
+  } = useContext(AuthContext)
 
   return (
     <div className="dashboard-header">
@@ -33,7 +36,7 @@ const DashboardNavbar = ({ page }) => {
           <Search page={page} />
         </Col>
         <Col className="dashboard-nav-item" xs={2}>
-          <ProfileMenu username="Musa" />
+          <ProfileMenu username={user.username} />
         </Col>
       </Row>
     </div>
